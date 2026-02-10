@@ -1,0 +1,77 @@
+[gd_resource type="Theme" format=3 uid="uid://c1ny6f816yb3i"]
+
+[ext_resource type="FontFile" uid="uid://dmp74krxcedn6" path="res://assets/font/rubik_semi_bold.ttf" id="1_w1xbi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y860d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y860d"]
+bg_color = Color(0.84313726, 0.8901961, 0.9882353, 1)
+border_width_bottom = 6
+border_color = Color(0.75686276, 0.827451, 0.99607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1skae"]
+bg_color = Color(0.92941177, 0.9490196, 0.9843137, 1)
+border_width_bottom = 6
+border_color = Color(0.8, 0.85882354, 0.99215686, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1xbi"]
+bg_color = Color(0.67058825, 0.76862746, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8fp5"]
+bg_color = Color(0.92941177, 0.9490196, 0.9843137, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p4x5"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6aug"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.7137255, 0.8, 0.99607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1p4x5"]
+
+[resource]
+default_font = ExtResource("1_w1xbi")
+default_font_size = 18
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.107479624, 0.10747973, 0.10748007, 1)
+Button/colors/font_hover_color = Color(0.107479624, 0.10747973, 0.10748007, 1)
+Button/colors/font_hover_pressed_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+Button/colors/font_pressed_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+Button/font_sizes/font_size = 21
+Button/styles/focus = SubResource("StyleBoxEmpty_y860d")
+Button/styles/hover = SubResource("StyleBoxFlat_y860d")
+Button/styles/normal = SubResource("StyleBoxFlat_1skae")
+Button/styles/pressed = SubResource("StyleBoxFlat_w1xbi")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_x8fp5")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1p4x5")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_1p4x5")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_a6aug")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_1p4x5")

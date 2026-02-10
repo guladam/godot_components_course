@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://ckdjnpiuxw36q"]
+
+[ext_resource type="FontFile" uid="uid://dmp74krxcedn6" path="res://assets/font/rubik_semi_bold.ttf" id="1_m1eic"]
+
+[resource]
+font = ExtResource("1_m1eic")
+font_size = 52
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.53333336)
+shadow_offset = Vector2(2, 2)

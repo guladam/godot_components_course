@@ -11,8 +11,22 @@ config_version=5
 [application]
 
 config/name="Components Course"
+run/main_scene="uid://da80swgoebs3k"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BackButton="*uid://tmbgei4t4u7v"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[gui]
+
+theme/custom="uid://c1ny6f816yb3i"
 
 [physics]
 

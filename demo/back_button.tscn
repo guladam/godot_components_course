@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://tmbgei4t4u7v"]
+
+[ext_resource type="Script" uid="uid://dul4ofhp12ns4" path="res://demo/back_button.gd" id="1_r0b8f"]
+[ext_resource type="PackedScene" uid="uid://da80swgoebs3k" path="res://demo/demo.tscn" id="2_7s5ks"]
+
+[node name="BackButton" type="CanvasLayer" unique_id=1716701318]
+layer = 100
+script = ExtResource("1_r0b8f")
+title_screen = ExtResource("2_7s5ks")
+
+[node name="Button" type="Button" parent="." unique_id=1744288474]
+custom_minimum_size = Vector2(250, 50)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -100.0
+offset_right = 300.0
+offset_bottom = -50.0
+grow_vertical = 0
+text = "Back to Title Screen"

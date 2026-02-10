@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://da80swgoebs3k"]
+
+[ext_resource type="Shader" uid="uid://bn3t1akmeupt1" path="res://assets/shaders/background.gdshader" id="1_5hfv0"]
+[ext_resource type="Script" uid="uid://d0jid22cqfauc" path="res://demo/demo.gd" id="1_u10mr"]
+[ext_resource type="LabelSettings" uid="uid://ckdjnpiuxw36q" path="res://assets/theme/label_large.tres" id="2_j5lb4"]
+[ext_resource type="Resource" uid="uid://do72npvqgl0e4" path="res://demo/component_list.tres" id="2_s1s6j"]
+[ext_resource type="Texture2D" uid="uid://cp6fhf5utb063" path="res://assets/images/9patchrect.svg" id="3_dar0o"]
+[ext_resource type="ButtonGroup" uid="uid://cifw0bs313i6k" path="res://demo/components_buttongroup.tres" id="4_onvmd"]
+[ext_resource type="ButtonGroup" uid="uid://dlxe0pdy5lqev" path="res://demo/components_filter_buttongroup.tres" id="6_s1s6j"]
+
+[sub_resource type="Gradient" id="Gradient_ytiva"]
+offsets = PackedFloat32Array(0, 0.40484428, 0.7058824, 1)
+colors = PackedColorArray(0.24115604, 0.24115607, 0.24115595, 1, 0, 0, 0, 1, 0.29651162, 0.29651162, 0.29651162, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_onu7k"]
+gradient = SubResource("Gradient_ytiva")
+fill_from = Vector2(0.18376069, 0.1965812)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0bhed"]
+shader = ExtResource("1_5hfv0")
+shader_parameter/gradient = SubResource("GradientTexture2D_onu7k")
+shader_parameter/circle_color = Color(0.67058825, 0.76862746, 1, 0.17254902)
+shader_parameter/circle_multiplier = 10.0
+shader_parameter/speed = 0.2
+shader_parameter/direction = Vector2(0.5, 0.5)
+shader_parameter/rotation = Transform2D(1, -1, 1, 1, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_j5lb4"]
+colors = PackedColorArray(0.26816082, 0.00035212457, 0.76345575, 1, 0.44833207, 0.56734574, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s1s6j"]
+gradient = SubResource("Gradient_j5lb4")
+fill_from = Vector2(0, 0.15384616)
+fill_to = Vector2(1, 0.6282051)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onu7k"]
+texture = SubResource("GradientTexture2D_s1s6j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dar0o"]
+bg_color = Color(0, 0, 0, 0.33333334)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_u10mr"]
+
+[node name="Demo" type="Control" unique_id=907801557]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_u10mr")
+component_list = ExtResource("2_s1s6j")
+filter_button_group = ExtResource("6_s1s6j")
+button_group = ExtResource("4_onvmd")
+
+[node name="Background" type="Panel" parent="." unique_id=1120054133]
+material = SubResource("ShaderMaterial_0bhed")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gradient" type="Panel" parent="Background" unique_id=1829462376]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_onu7k")
+
+[node name="Dim" type="Panel" parent="Background" unique_id=507427400]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dar0o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1814305173]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -307.5
+offset_right = 200.0
+offset_bottom = 307.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2039573285]
+layout_mode = 2
+text = "50 Components"
+label_settings = ExtResource("2_j5lb4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Filters" type="HBoxContainer" parent="VBoxContainer" unique_id=2075686844]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="FilterButton" type="Button" parent="VBoxContainer/Filters" unique_id=690042547]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("6_s1s6j")
+text = "ALL"
+
+[node name="FilterButton2" type="Button" parent="VBoxContainer/Filters" unique_id=530809772]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_s1s6j")
+text = "2D"
+
+[node name="FilterButton3" type="Button" parent="VBoxContainer/Filters" unique_id=750004164]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_s1s6j")
+text = "AI"
+
+[node name="FilterButton4" type="Button" parent="VBoxContainer/Filters" unique_id=1055167673]
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_s1s6j")
+text = "GENERAL"
+
+[node name="FilterButton5" type="Button" parent="VBoxContainer/Filters" unique_id=195702837]
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_s1s6j")
+text = "TILEMAP"
+
+[node name="FilterButton6" type="Button" parent="VBoxContainer/Filters" unique_id=700288694]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_s1s6j")
+text = "UI"
+
+[node name="ComponentsPanel" type="NinePatchRect" parent="VBoxContainer" unique_id=1766782458]
+custom_minimum_size = Vector2(450, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("3_dar0o")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ComponentsPanel" unique_id=271580880]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="ComponentsScroll" type="ScrollContainer" parent="VBoxContainer/ComponentsPanel/MarginContainer" unique_id=1197625867]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ComponentsPanel/MarginContainer/ComponentsScroll" unique_id=801699035]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 16
+
+[node name="Components" type="VBoxContainer" parent="VBoxContainer/ComponentsPanel/MarginContainer/ComponentsScroll/MarginContainer" unique_id=1729205413]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="Button" type="Button" parent="VBoxContainer/ComponentsPanel/MarginContainer/ComponentsScroll/MarginContainer/Components" unique_id=297963766]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_u10mr")
+text = "Placeholder Text"
+
+[node name="Button2" type="Button" parent="VBoxContainer/ComponentsPanel/MarginContainer/ComponentsScroll/MarginContainer/Components" unique_id=682547113]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_u10mr")
+text = "Placeholder Text"
+
+[node name="Button3" type="Button" parent="VBoxContainer/ComponentsPanel/MarginContainer/ComponentsScroll/MarginContainer/Components" unique_id=362533804]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_u10mr")
+text = "Placeholder Text"
+
+[node name="Button4" type="Button" parent="VBoxContainer/ComponentsPanel/MarginContainer/ComponentsScroll/MarginContainer/Components" unique_id=1835083566]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_u10mr")
+text = "Placeholder Text"
+
+[node name="GoButton" type="Button" parent="VBoxContainer" unique_id=19430264]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "See it in Action!"
+
+[node name="ExitButton" type="Button" parent="." unique_id=278556111]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -100.0
+offset_right = -60.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Exit"
