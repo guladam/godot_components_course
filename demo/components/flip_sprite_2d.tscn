@@ -1,0 +1,228 @@
+[gd_scene format=4 uid="uid://b5spcukptpg2j"]
+
+[ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="1_2haje"]
+[ext_resource type="Script" uid="uid://b0ux4e6qr7hrh" path="res://demo/components/flip_sprite_2d.gd" id="1_yeo73"]
+[ext_resource type="Texture2D" uid="uid://bsukc2ifqhow6" path="res://assets/kenney_new_platformer_pack/spritesheet_enemies_default.png" id="2_gae4t"]
+[ext_resource type="FontFile" uid="uid://dmp74krxcedn6" path="res://assets/font/rubik_semi_bold.ttf" id="3_yeo73"]
+[ext_resource type="Script" uid="uid://b22ps5rbehi44" path="res://components/flip_sprite_2d.gd" id="4_sxh6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8q6g"]
+atlas = ExtResource("2_gae4t")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brxqg"]
+atlas = ExtResource("2_gae4t")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hitmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8q6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brxqg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_20tve"]
+font = ExtResource("3_yeo73")
+font_size = 32
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.60784316)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gae4t"]
+atlas = ExtResource("2_gae4t")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeo73"]
+atlas = ExtResource("2_gae4t")
+region = Rect2(192, 448, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxh6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gae4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeo73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hitmo"]
+atlas = ExtResource("2_gae4t")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20tve"]
+atlas = ExtResource("2_gae4t")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srws3"]
+atlas = ExtResource("2_gae4t")
+region = Rect2(128, 448, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kas7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hitmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20tve")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_srws3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gae4t"]
+font = ExtResource("3_yeo73")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5882353)
+
+[node name="FlipSprite2D" type="Node2D" unique_id=1136694900]
+script = ExtResource("1_yeo73")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=863265922]
+modulate = Color(0.48235294, 0.48235294, 0.48235294, 1)
+tile_map_data = PackedByteArray("AAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAA=")
+tile_set = ExtResource("1_2haje")
+metadata/_edit_lock_ = true
+
+[node name="Avatar" type="AnimatedSprite2D" parent="." unique_id=1897606196]
+position = Vector2(640, 490)
+sprite_frames = SubResource("SpriteFrames_hitmo")
+autoplay = "default"
+frame = 1
+frame_progress = 0.09723671
+
+[node name="Label" type="Label" parent="Avatar" unique_id=702491771]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -96.0
+offset_right = 64.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "horizontal"
+label_settings = SubResource("LabelSettings_20tve")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FlipSprite2D" type="Node" parent="Avatar" unique_id=536548665 node_paths=PackedStringArray("sprite")]
+script = ExtResource("4_sxh6c")
+sprite = NodePath("..")
+metadata/_custom_type_script = "uid://b22ps5rbehi44"
+
+[node name="Avatar2" type="AnimatedSprite2D" parent="." unique_id=1392900112]
+position = Vector2(440, 490)
+sprite_frames = SubResource("SpriteFrames_sxh6c")
+autoplay = "default"
+frame = 1
+frame_progress = 0.61996126
+
+[node name="Label" type="Label" parent="Avatar2" unique_id=1414990616]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -96.0
+offset_right = 64.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "vertical"
+label_settings = SubResource("LabelSettings_20tve")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FlipSprite2D" type="Node" parent="Avatar2" unique_id=665323167 node_paths=PackedStringArray("sprite")]
+script = ExtResource("4_sxh6c")
+sprite = NodePath("..")
+flip_h = false
+flip_v = true
+metadata/_custom_type_script = "uid://b22ps5rbehi44"
+
+[node name="Avatar3" type="AnimatedSprite2D" parent="." unique_id=1693528152]
+position = Vector2(840, 490)
+sprite_frames = SubResource("SpriteFrames_kas7j")
+autoplay = "default"
+frame = 2
+frame_progress = 0.9158121
+
+[node name="Label" type="Label" parent="Avatar3" unique_id=646740038]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -96.0
+offset_right = 64.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "both"
+label_settings = SubResource("LabelSettings_20tve")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FlipSprite2D" type="Node" parent="Avatar3" unique_id=71858973 node_paths=PackedStringArray("sprite")]
+script = ExtResource("4_sxh6c")
+sprite = NodePath("..")
+flip_v = true
+metadata/_custom_type_script = "uid://b22ps5rbehi44"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=304346581]
+
+[node name="ToggleButton" type="Button" parent="UI" unique_id=1374294789]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 70)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -175.0
+offset_right = 125.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "flip towards mouse:
+disabled"
+
+[node name="PressToToggle" type="Label" parent="UI" unique_id=1742804041]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -104.0
+offset_right = 66.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "press to toggle"
+label_settings = SubResource("LabelSettings_gae4t")
+horizontal_alignment = 1
+vertical_alignment = 1

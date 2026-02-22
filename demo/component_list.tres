@@ -4,3 +4,6 @@
 
 [resource]
 script = ExtResource("1_65u6p")
+component_paths = PackedStringArray("res://demo/components/flip_sprite_2d.tscn")
+component_names = PackedStringArray("FlipSprite2D")
+component_types = Array[int]([0])

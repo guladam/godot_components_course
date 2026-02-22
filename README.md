@@ -3,4 +3,4 @@ A repository of reusable, single-responsibility, self-contained Godot 4 componen
 
 ## Credits
 
-- Here will be a list of used assets and other credits.
+- Kenney: https://kenney.nl

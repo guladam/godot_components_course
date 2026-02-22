@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="flip_sprite_2d.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="25.125"
+     inkscape:cx="-1.2338308"
+     inkscape:cy="3.4228856"
+     inkscape:window-width="1920"
+     inkscape:window-height="992"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8">
+    <inkscape:grid
+       type="xygrid"
+       id="grid295" />
+  </sodipodi:namedview>
+  <path
+     id="path2"
+     style="display:inline;fill:#8da5f3"
+     d="M 5 1 A 4 4 0 0 0 1 5 L 1 11 A 4 4 0 0 0 1.5507812 12.992188 C 2.238185 12.971198 2.6887793 12.912446 2.8027344 12.855469 C 2.8738479 12.81991 2.8571775 12.84283 2.8984375 12.75 C 2.939698 12.657165 3 12.416666 3 12 A 1 1 0 0 1 4 11 A 1 1 0 0 1 5 12 C 5 12.583328 4.9353012 13.092836 4.7265625 13.5625 C 4.5178238 14.032164 4.1261486 14.430089 3.6972656 14.644531 C 3.6449813 14.670674 3.5932051 14.694256 3.5410156 14.716797 A 4 4 0 0 0 5 15 L 7 15 L 7 14 L 7 13.855469 L 7 11.732422 L 7 11 L 7 1 L 5 1 z M 9 1 L 9 11 L 9 11.732422 L 9 13.855469 L 9 14 L 9 15 L 11 15 A 4 4 0 0 0 12.458984 14.716797 C 12.406795 14.694257 12.355019 14.670674 12.302734 14.644531 C 11.873855 14.430089 11.482171 14.032164 11.273438 13.5625 C 11.0647 13.092836 11 12.583327 11 12 A 1 1 0 0 1 12 11 A 1 1 0 0 1 13 12 C 13 12.416666 13.060304 12.657165 13.101562 12.75 C 13.142822 12.842839 13.126146 12.819909 13.197266 12.855469 C 13.311221 12.912444 13.761813 12.971198 14.449219 12.992188 A 4 4 0 0 0 15 11 L 15 5 A 4 4 0 0 0 11 1 L 9 1 z M 3 5 C 3.5539988 5 4 5.4460012 4 6 L 4 8 C 4 8.5539988 3.5539988 9 3 9 C 2.4460012 9 2 8.5539988 2 8 L 2 6 C 2 5.4460012 2.4460012 5 3 5 z M 13 5 C 13.553999 5 14 5.4460006 14 6 L 14 8 C 14 8.5539994 13.553999 9 13 9 C 12.446001 9 12 8.5539994 12 8 L 12 6 C 12 5.4460006 12.446001 5 13 5 z " />
+  <path
+     d="m8 3.147h-4.4058l2.5176 2.5176m-2.5176-2.5176 2.5176-2.5176"
+     fill="none"
+     stroke="#e0e0e0"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1.2588"
+     id="path4"
+     style="stroke:#e0e0e0" />
+  <path
+     d="m 8,3.147 h 4.4058 L 9.8882,0.6294 M 12.4058,3.147 9.8882,5.6646"
+     fill="none"
+     stroke="#e0e0e0"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1.2588"
+     id="path6"
+     style="display:inline;stroke:#e0e0e0" />
+</svg>
