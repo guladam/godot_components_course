@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dihagbopaaje2"]
+
+[ext_resource type="Material" uid="uid://cikybuae1ok5l" path="res://demo/components/scene_spawner/scene_spawner_reward_particle3.tres" id="2_xf07m"]
+[ext_resource type="Script" uid="uid://ctskp28jpmejs" path="res://demo/components/scene_spawner/scene_spawner_reward.gd" id="3_4pb75"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dpiyi"]
+load_path = "res://.godot/imported/spritesheet_tiles_default.png-987e724bde79132197883cadc83e4388.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpiyi"]
+atlas = SubResource("CompressedTexture2D_dpiyi")
+region = Rect2(896, 128, 64, 64)
+
+[node name="SceneSpawnerReward" type="GPUParticles2D" unique_id=1559884665]
+emitting = false
+amount = 20
+texture = SubResource("AtlasTexture_dpiyi")
+lifetime = 1.2
+one_shot = true
+explosiveness = 0.8
+process_material = ExtResource("2_xf07m")
+script = ExtResource("3_4pb75")

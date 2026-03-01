@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btltl1q5jx5q7"
-path="res://.godot/imported/flip_sprite_2d.svg-2959c5c5296292d2441baf2226dfe44b.ctex"
+uid="uid://d02j6o78nmuc0"
+path="res://.godot/imported/scene_spawner.svg-842e0c0896f018cde59673e4f0faec81.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://components/flip_sprite_2d.svg"
-dest_files=["res://.godot/imported/flip_sprite_2d.svg-2959c5c5296292d2441baf2226dfe44b.ctex"]
+source_file="res://components/scene_spawner.svg"
+dest_files=["res://.godot/imported/scene_spawner.svg-842e0c0896f018cde59673e4f0faec81.ctex"]
 
 [params]
 

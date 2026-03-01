@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b5spcukptpg2j"]
 
 [ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="1_2haje"]
-[ext_resource type="Script" uid="uid://b0ux4e6qr7hrh" path="res://demo/components/flip_sprite_2d.gd" id="1_yeo73"]
+[ext_resource type="Script" uid="uid://b0ux4e6qr7hrh" path="res://demo/components/flip_sprite_2d/flip_sprite_2d.gd" id="1_yeo73"]
 [ext_resource type="Texture2D" uid="uid://bsukc2ifqhow6" path="res://assets/kenney_new_platformer_pack/spritesheet_enemies_default.png" id="2_gae4t"]
 [ext_resource type="FontFile" uid="uid://dmp74krxcedn6" path="res://assets/font/rubik_semi_bold.ttf" id="3_yeo73"]
 [ext_resource type="Script" uid="uid://b22ps5rbehi44" path="res://components/flip_sprite_2d.gd" id="4_sxh6c"]

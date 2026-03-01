@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://e63yeryj4ukr"]
+
+[ext_resource type="Script" uid="uid://didym2w8fy1th" path="res://components/scene_spawner.gd" id="1_0ij5q"]
+[ext_resource type="Script" uid="uid://cnqgvdbuictlu" path="res://demo/components/scene_spawner/scene_spawner.gd" id="1_gryga"]
+[ext_resource type="Shader" uid="uid://b6ygn1j2aujwh" path="res://assets/shaders/ocean_background.gdshader" id="1_y1vtt"]
+[ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="2_c8nvl"]
+[ext_resource type="Script" uid="uid://diuobuo4ifkps" path="res://demo/components/scene_spawner/scene_spawner_flames_demo.gd" id="2_mfb1y"]
+[ext_resource type="PackedScene" uid="uid://66k3r4ce6sx3" path="res://demo/components/scene_spawner/scene_spawner_flame.tscn" id="3_6wb1w"]
+[ext_resource type="Script" uid="uid://cwlxcy7swprrd" path="res://demo/components/scene_spawner/scene_spawner_projectile_demo.gd" id="5_hbxge"]
+[ext_resource type="PackedScene" uid="uid://84otb08ymd5l" path="res://demo/components/scene_spawner/scene_spawner_arrow.tscn" id="7_k8nuh"]
+[ext_resource type="PackedScene" uid="uid://dihagbopaaje2" path="res://demo/components/scene_spawner/scene_spawner_reward.tscn" id="8_frm43"]
+[ext_resource type="Script" uid="uid://cr0h7jqx4vm5s" path="res://demo/components/scene_spawner/scene_spawner_reward_demo.gd" id="8_mk77s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ij5q"]
+shader = ExtResource("1_y1vtt")
+shader_parameter/bottom_color = Color(0.8862745, 0.91764706, 0.9882353, 1)
+shader_parameter/top_color = Color(0.34509805, 0.4509804, 0.78039217, 1)
+shader_parameter/wave_amp = 0.038000001805
+shader_parameter/wave_size = 3.0230000960925
+shader_parameter/wave_time_mul = 0.11000000196512
+shader_parameter/total_phases = 6
+
+[node name="SceneSpawner" type="Node2D" unique_id=1640652240]
+script = ExtResource("1_gryga")
+
+[node name="FlamesDemo" type="Node2D" parent="." unique_id=1653804894]
+script = ExtResource("2_mfb1y")
+
+[node name="Flames" type="Node2D" parent="FlamesDemo" unique_id=394710255]
+position = Vector2(240, 460)
+
+[node name="FlameSpawn1" type="Marker2D" parent="FlamesDemo/Flames" unique_id=1415782814]
+
+[node name="FlameSpawn2" type="Marker2D" parent="FlamesDemo/Flames" unique_id=223762631]
+position = Vector2(200, 0)
+
+[node name="FlameSpawn3" type="Marker2D" parent="FlamesDemo/Flames" unique_id=1122756614]
+position = Vector2(400, 0)
+
+[node name="FlameSpawn4" type="Marker2D" parent="FlamesDemo/Flames" unique_id=1381888324]
+position = Vector2(600, 0)
+
+[node name="FlameSpawn5" type="Marker2D" parent="FlamesDemo/Flames" unique_id=873402129]
+position = Vector2(800, 0)
+
+[node name="SceneSpawner" type="Node" parent="FlamesDemo" unique_id=11364895]
+script = ExtResource("1_0ij5q")
+scene = ExtResource("3_6wb1w")
+metadata/_custom_type_script = "uid://didym2w8fy1th"
+
+[node name="ProjectileDemo" type="Node2D" parent="." unique_id=942130545]
+visible = false
+script = ExtResource("5_hbxge")
+
+[node name="Character" type="Sprite2D" parent="ProjectileDemo" unique_id=82791303]
+position = Vector2(240, 420)
+texture = ExtResource("2_c8nvl")
+region_enabled = true
+region_rect = Rect2(576, 320, 64, 64)
+
+[node name="Weapon" type="Node2D" parent="ProjectileDemo/Character" unique_id=1386441263]
+
+[node name="Hand1" type="Sprite2D" parent="ProjectileDemo/Character/Weapon" unique_id=505609027]
+position = Vector2(40, 10)
+texture = ExtResource("2_c8nvl")
+region_enabled = true
+region_rect = Rect2(576, 576, 64, 64)
+
+[node name="Bow" type="Sprite2D" parent="ProjectileDemo/Character/Weapon" unique_id=150151737]
+position = Vector2(40, 0)
+texture = ExtResource("2_c8nvl")
+region_enabled = true
+region_rect = Rect2(512, 128, 64, 64)
+
+[node name="Hand2" type="Sprite2D" parent="ProjectileDemo/Character/Weapon" unique_id=1085783344]
+position = Vector2(40, -10)
+texture = ExtResource("2_c8nvl")
+region_enabled = true
+region_rect = Rect2(576, 576, 64, 64)
+
+[node name="Muzzle" type="Marker2D" parent="ProjectileDemo/Character/Weapon" unique_id=1772318108]
+position = Vector2(70, 0)
+
+[node name="Timer" type="Timer" parent="ProjectileDemo/Character" unique_id=2135018784]
+wait_time = 3.0
+autostart = true
+
+[node name="SceneSpawner" type="Node" parent="ProjectileDemo" unique_id=532113833]
+script = ExtResource("1_0ij5q")
+scene = ExtResource("7_k8nuh")
+spawn_top_level = true
+match_transform_top_level = true
+metadata/_custom_type_script = "uid://didym2w8fy1th"
+
+[node name="RewardDemo" type="Node2D" parent="." unique_id=1359269897]
+visible = false
+script = ExtResource("8_mk77s")
+
+[node name="SpawnPosition" type="Marker2D" parent="RewardDemo" unique_id=1732983514]
+position = Vector2(640, 460)
+
+[node name="Text" type="Node2D" parent="RewardDemo" unique_id=1919234330]
+position = Vector2(640, 188)
+
+[node name="LevelLabel" type="Label" parent="RewardDemo/Text" unique_id=1516738776]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Space to toggle the Level!
+Current Level: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SceneSpawner" type="Node" parent="RewardDemo" unique_id=1066460147]
+script = ExtResource("1_0ij5q")
+scene = ExtResource("8_frm43")
+metadata/_custom_type_script = "uid://didym2w8fy1th"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2102404157]
+layer = -1
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=1483008291]
+material = SubResource("ShaderMaterial_0ij5q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=832354339]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -275.0
+offset_right = 125.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Spawn New Flame"
+
+[node name="TabBar" type="TabBar" parent="CanvasLayer" unique_id=1967974030]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.75
+offset_top = -335.0
+offset_right = 177.75
+offset_bottom = -295.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tab_alignment = 1
+tab_count = 3
+tab_0/title = "Flames"
+tab_1/title = "Projectiles"
+tab_2/title = "Reward"

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://84otb08ymd5l"]
+
+[ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="1_u06cg"]
+[ext_resource type="Script" uid="uid://crnriatpe3x5d" path="res://demo/components/scene_spawner/scene_spawner_arrow.gd" id="2_6oid0"]
+
+[node name="SceneSpawnerArrow" type="Sprite2D" unique_id=239535267]
+texture = ExtResource("1_u06cg")
+region_enabled = true
+region_rect = Rect2(512, 256, 64, 64)
+script = ExtResource("2_6oid0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2000965070]
