@@ -22,8 +22,8 @@ extends Node
 
 
 func _get_configuration_warnings() -> PackedStringArray:
-	if not scene:
-		return ["No scene assigned to the SceneSpawner!"]
+	if not scene or not scene is PackedScene:
+		return ["No valid scene assigned to the SceneSpawner!"]
 	else:
 		return []
 
