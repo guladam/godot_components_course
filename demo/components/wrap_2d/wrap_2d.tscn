@@ -1,0 +1,229 @@
+[gd_scene format=4 uid="uid://bxfsfhk0q3smy"]
+
+[ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="1_f4gl6"]
+[ext_resource type="Script" uid="uid://ctbajwewtukkp" path="res://demo/components/wrap_2d/wrap_2d.gd" id="1_kvepp"]
+[ext_resource type="TileSet" uid="uid://0ufumvwvaxs5" path="res://assets/tilesets/kenney_platformer_tiles.tres" id="2_sll4a"]
+[ext_resource type="Texture2D" uid="uid://du4wj4qqihe8l" path="res://assets/kenney_new_platformer_pack/spritesheet_characters_default.png" id="3_801mt"]
+[ext_resource type="Script" uid="uid://ctgefb2lkfo64" path="res://components/wrap_2d.gd" id="4_u2kqj"]
+[ext_resource type="Texture2D" uid="uid://bsukc2ifqhow6" path="res://assets/kenney_new_platformer_pack/spritesheet_enemies_default.png" id="5_801mt"]
+[ext_resource type="Texture2D" uid="uid://j2sbckg10pr0" path="res://assets/kenney_new_platformer_pack/spritesheet_tiles_default.png" id="5_u2kqj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvepp"]
+atlas = ExtResource("3_801mt")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeoen"]
+atlas = ExtResource("3_801mt")
+region = Rect2(0, 768, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsam4"]
+atlas = ExtResource("3_801mt")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvskg"]
+atlas = ExtResource("3_801mt")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vpjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvepp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeoen")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsam4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvskg")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emk14"]
+size = Vector2(44, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emk14"]
+atlas = ExtResource("5_u2kqj")
+region = Rect2(768, 256, 64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucggj"]
+radius = 28.01785
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2kqj"]
+atlas = ExtResource("5_801mt")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vpjw"]
+atlas = ExtResource("5_801mt")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emk14"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2kqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vpjw")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2kqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vpjw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Wrap2D" type="Node2D" unique_id=897212505]
+script = ExtResource("1_kvepp")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=171426956]
+modulate = Color(0.48235294, 0.48235294, 0.48235294, 1)
+tile_map_data = PackedByteArray("AAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAD//wEAAAACAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAACAAEAAAD//wIAAAAAAAIAAAAAAAIAAAAAAAIAAAABAAIAAAAAAAIAAAACAAIAAAAAAAIAAAADAAIAAAAAAAIAAAAEAAIAAAAAAAIAAAAFAAIAAAAAAAIAAAAGAAAAAAABAAIAAAAGAAIAAAAAAAIAAAAGAAEAAAACAAEAAAA=")
+tile_set = ExtResource("1_f4gl6")
+
+[node name="Tiles" type="TileMapLayer" parent="." unique_id=1992780580]
+tile_map_data = PackedByteArray("AAAAAAgAAQAHAA8AAAABAAgAAQAHAA8AAAACAAgAAQAHAA8AAAADAAgAAQAHAA8AAAAEAAgAAQAHAA8AAAAFAAgAAQAHAA8AAAAGAAgAAQAHAA8AAAAHAAgAAQAHAA8AAAAIAAgAAQAHAA8AAAAJAAgAAQAHAA8AAAAKAAgAAQAHAA8AAAALAAgAAQAHAA8AAAAMAAgAAQAHAA8AAAANAAgAAQAHAA8AAAAOAAgAAQAHAA8AAAAPAAgAAQAHAA8AAAAQAAgAAQAHAA8AAAARAAgAAQAHAA8AAAASAAgAAQAHAA8AAAATAAgAAQAHAA8AAAAUAAgAAQAHAA8AAAD//wgAAQAHAA8AAAAAAAkAAQAIAAAAAAABAAkAAQAIAAAAAAACAAkAAQAIAAAAAAADAAkAAQAIAAAAAAAEAAkAAQAIAAAAAAAFAAkAAQAIAAAAAAAGAAkAAQAIAAAAAAAHAAkAAQAIAAAAAAAIAAkAAQAIAAAAAAAJAAkAAQAIAAAAAAAKAAkAAQAIAAAAAAALAAkAAQAIAAAAAAAMAAkAAQAIAAAAAAANAAkAAQAIAAAAAAAOAAkAAQAIAAAAAAAPAAkAAQAIAAAAAAAQAAkAAQAIAAAAAAARAAkAAQAIAAAAAAASAAkAAQAIAAAAAAATAAkAAQAIAAAAAAAUAAkAAQAIAAAAAAAUAAoAAQAIAAAAAAATAAoAAQAIAAAAAAASAAoAAQAIAAAAAAARAAoAAQAIAAAAAAAQAAoAAQAIAAAAAAAPAAoAAQAIAAAAAAAOAAoAAQAIAAAAAAAUAAsAAQAIAAAAAAATAAsAAQAIAAAAAAASAAsAAQAIAAAAAAARAAsAAQAIAAAAAAAQAAsAAQAIAAAAAAAPAAsAAQAIAAAAAAAOAAsAAQAIAAAAAAANAAsAAQAIAAAAAAAMAAsAAQAIAAAAAAALAAsAAQAIAAAAAAANAAoAAQAIAAAAAAAMAAoAAQAIAAAAAAALAAoAAQAIAAAAAAAKAAoAAQAIAAAAAAAJAAoAAQAIAAAAAAAIAAoAAQAIAAAAAAAHAAoAAQAIAAAAAAAGAAoAAQAIAAAAAAAKAAsAAQAIAAAAAAAJAAsAAQAIAAAAAAAIAAsAAQAIAAAAAAAHAAsAAQAIAAAAAAAGAAsAAQAIAAAAAAAFAAsAAQAIAAAAAAAEAAsAAQAIAAAAAAADAAsAAQAIAAAAAAAFAAoAAQAIAAAAAAAEAAoAAQAIAAAAAAADAAoAAQAIAAAAAAACAAoAAQAIAAAAAAABAAoAAQAIAAAAAAAAAAoAAQAIAAAAAAD//woAAQAIAAAAAAD//wkAAQAIAAAAAAD//wsAAQAIAAAAAAAAAAsAAQAIAAAAAAABAAsAAQAIAAAAAAACAAsAAQAIAAAAAAAVAAsAAQAIAAAAAAAVAAoAAQAIAAAAAAAVAAkAAQAIAAAAAAAVAAgAAQAHAA8AAAD+/wgAAQAHAA8AAAD+/wkAAQAIAAAAAAD+/woAAQAIAAAAAAD+/wsAAQAIAAAAAAA=")
+tile_set = ExtResource("2_sll4a")
+
+[node name="Character" type="CharacterBody2D" parent="." unique_id=1425629951]
+position = Vector2(573, 448)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character" unique_id=1396760407]
+sprite_frames = SubResource("SpriteFrames_3vpjw")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=1074555086]
+position = Vector2(0, 54)
+shape = SubResource("RectangleShape2D_emk14")
+
+[node name="Wrap2D" type="Node" parent="Character" unique_id=2059821210 node_paths=PackedStringArray("target")]
+script = ExtResource("4_u2kqj")
+target = NodePath("..")
+metadata/_custom_type_script = "uid://ctgefb2lkfo64"
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=303427575]
+position = Vector2(646, 321)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=136992397]
+texture = SubResource("AtlasTexture_emk14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=549833887]
+shape = SubResource("CircleShape2D_ucggj")
+
+[node name="Wrap2D" type="Node" parent="Ball" unique_id=90433483 node_paths=PackedStringArray("target")]
+script = ExtResource("4_u2kqj")
+target = NodePath("..")
+metadata/_custom_type_script = "uid://ctgefb2lkfo64"
+
+[node name="FlyingCreature" type="AnimatedSprite2D" parent="." unique_id=101422631]
+position = Vector2(832, 395)
+sprite_frames = SubResource("SpriteFrames_emk14")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Wrap2D" type="Node" parent="FlyingCreature" unique_id=2083104344 node_paths=PackedStringArray("target")]
+script = ExtResource("4_u2kqj")
+target = NodePath("..")
+wrap_horizontally = false
+wrap_vertically = true
+metadata/_custom_type_script = "uid://ctgefb2lkfo64"
+
+[node name="Buttons" type="CanvasLayer" parent="." unique_id=208685836]
+
+[node name="ButtonContainers" type="HBoxContainer" parent="Buttons" unique_id=682896199]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -390.0
+offset_top = 40.0
+offset_right = 390.0
+offset_bottom = 206.0
+grow_horizontal = 2
+theme_override_constants/separation = 15
+
+[node name="ButtonContainer" type="VBoxContainer" parent="Buttons/ButtonContainers" unique_id=1829583972]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CharLeft" type="Button" parent="Buttons/ButtonContainers/ButtonContainer" unique_id=1219422260]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Character Run Left"
+
+[node name="CharStop" type="Button" parent="Buttons/ButtonContainers/ButtonContainer" unique_id=1716026569]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Character Stop"
+
+[node name="CharRight" type="Button" parent="Buttons/ButtonContainers/ButtonContainer" unique_id=772755127]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Character Run Right"
+
+[node name="ButtonContainer2" type="VBoxContainer" parent="Buttons/ButtonContainers" unique_id=1017838203]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BallLeft" type="Button" parent="Buttons/ButtonContainers/ButtonContainer2" unique_id=1351173563]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Ball Launch Left"
+
+[node name="BallReset" type="Button" parent="Buttons/ButtonContainers/ButtonContainer2" unique_id=137037818]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Ball Reset"
+
+[node name="BallRight" type="Button" parent="Buttons/ButtonContainers/ButtonContainer2" unique_id=168095455]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Ball Launch Right"
+
+[node name="ButtonContainer3" type="VBoxContainer" parent="Buttons/ButtonContainers" unique_id=1331314024]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="EnemyUp" type="Button" parent="Buttons/ButtonContainers/ButtonContainer3" unique_id=1722672050]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Enemy Fly Up"
+
+[node name="EnemyStop" type="Button" parent="Buttons/ButtonContainers/ButtonContainer3" unique_id=1517817394]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Enemy Stop"
+
+[node name="EnemyDown" type="Button" parent="Buttons/ButtonContainers/ButtonContainer3" unique_id=1176102067]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Enemy Fly Down"
