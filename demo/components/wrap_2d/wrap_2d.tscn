@@ -106,7 +106,7 @@ tile_map_data = PackedByteArray("AAAAAAgAAQAHAA8AAAABAAgAAQAHAA8AAAACAAgAAQAHAA8
 tile_set = ExtResource("2_sll4a")
 
 [node name="Character" type="CharacterBody2D" parent="." unique_id=1425629951]
-position = Vector2(573, 448)
+position = Vector2(500, 448)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character" unique_id=1396760407]
 sprite_frames = SubResource("SpriteFrames_3vpjw")
@@ -137,7 +137,7 @@ target = NodePath("..")
 metadata/_custom_type_script = "uid://ctgefb2lkfo64"
 
 [node name="FlyingCreature" type="AnimatedSprite2D" parent="." unique_id=101422631]
-position = Vector2(832, 395)
+position = Vector2(832, 380)
 sprite_frames = SubResource("SpriteFrames_emk14")
 animation = &"idle"
 autoplay = "idle"

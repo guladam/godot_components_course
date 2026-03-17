@@ -39,7 +39,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func _physics_process(_delta: float) -> void:
-	if not target:
+	if not target or Engine.is_editor_hint():
 		return
 
 	if target is RigidBody2D:

@@ -8,7 +8,8 @@ const LIST_RESOURCE_PATH := "res://demo/component_list.tres"
 
 const TYPES := {
 	"FlipSprite2D": "2D",
-	"SceneSpawner": "GENERAL"
+	"SceneSpawner": "GENERAL",
+	"Wrap2D": "2D"
 }
 
 func _run() -> void:
