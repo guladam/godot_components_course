@@ -9,8 +9,11 @@ const LIST_RESOURCE_PATH := "res://demo/component_list.tres"
 const TYPES := {
 	"FlipSprite2D": "2D",
 	"SceneSpawner": "GENERAL",
+	"Hitbox2D" : "2D",
 	"Wrap2D": "2D"
 }
+
+const SKIP := ["hurtbox_2d.gd"]
 
 func _run() -> void:
 	var component_paths: PackedStringArray = []
@@ -19,7 +22,7 @@ func _run() -> void:
 	var component_list := ComponentList.new()
 	
 	for file: String in DirAccess.get_files_at(COMPONENTS_SCRIPTS_FOLDER):
-		if file.ends_with(".gd"):
+		if file.ends_with(".gd") and file not in SKIP:
 			var name := file.to_pascal_case().trim_suffix(".gd").replace("2d", "2D")
 			component_paths.append(
 				COMPONENTS_DEMO_FOLDER + file.trim_suffix(".gd") + "/"

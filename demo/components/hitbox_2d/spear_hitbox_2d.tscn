@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cwe4sdcfrw34"]
+
+[ext_resource type="Script" uid="uid://dxf6lakepdipi" path="res://demo/components/hitbox_2d/spear_hitbox_2d.gd" id="1_nfgq6"]
+[ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="2_gdrlb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kk05"]
+size = Vector2(100, 12)
+
+[node name="SpearHitbox2D" type="Area2D" unique_id=701449865]
+script = ExtResource("1_nfgq6")
+metadata/_custom_type_script = "uid://gsnposkajxfl"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2063952959]
+rotation = 1.5707964
+texture = ExtResource("2_gdrlb")
+region_enabled = true
+region_rect = Rect2(448, 64, 64, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=10160125]
+position = Vector2(-3.5, 0)
+shape = SubResource("RectangleShape2D_7kk05")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2107821128]
+rect = Rect2(-50, -5, 100, 10)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="queue_free"]

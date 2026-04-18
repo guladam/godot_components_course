@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://pwymk1uai3sw"]
+
+[ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="1_3ji5u"]
+[ext_resource type="Script" uid="uid://cv70t06ht66b0" path="res://demo/components/hitbox_2d/hitbox_2d.gd" id="1_ekwxn"]
+[ext_resource type="Shader" uid="uid://b6ygn1j2aujwh" path="res://assets/shaders/ocean_background.gdshader" id="1_o215e"]
+[ext_resource type="Script" uid="uid://dyymmgkcx67da" path="res://components/hurtbox_2d.gd" id="2_ldjk5"]
+[ext_resource type="PackedScene" uid="uid://cwe4sdcfrw34" path="res://demo/components/hitbox_2d/spear_hitbox_2d.tscn" id="2_weevq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ekwxn"]
+radius = 18.0
+height = 60.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ji5u"]
+shader = ExtResource("1_o215e")
+shader_parameter/bottom_color = Color(0.8862745, 0.91764706, 0.9882353, 1)
+shader_parameter/top_color = Color(0.34509805, 0.4509804, 0.78039217, 1)
+shader_parameter/wave_amp = 0.038000001805
+shader_parameter/wave_size = 3.0230000960925
+shader_parameter/wave_time_mul = 0.11000000196512
+shader_parameter/total_phases = 6
+
+[node name="Hitbox2D" type="Node2D" unique_id=451834113]
+script = ExtResource("1_ekwxn")
+spear_scene = ExtResource("2_weevq")
+
+[node name="ShootingDude" type="Sprite2D" parent="." unique_id=710521468]
+position = Vector2(390, 420)
+texture = ExtResource("1_3ji5u")
+region_enabled = true
+region_rect = Rect2(576, 64, 64, 64)
+
+[node name="Hand" type="Sprite2D" parent="ShootingDude" unique_id=445059235]
+position = Vector2(30, -1)
+texture = ExtResource("1_3ji5u")
+region_enabled = true
+region_rect = Rect2(576, 576, 64, 64)
+
+[node name="Enemy1" type="Sprite2D" parent="." unique_id=288670090]
+position = Vector2(750, 420)
+texture = ExtResource("1_3ji5u")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(576, 256, 64, 64)
+
+[node name="Hurtbox2D" type="Area2D" parent="Enemy1" unique_id=1918616497]
+script = ExtResource("2_ldjk5")
+metadata/_custom_type_script = "uid://dyymmgkcx67da"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy1/Hurtbox2D" unique_id=434067217]
+shape = SubResource("CapsuleShape2D_ekwxn")
+
+[node name="Enemy2" type="Sprite2D" parent="." unique_id=810953166]
+position = Vector2(850, 420)
+texture = ExtResource("1_3ji5u")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(576, 384, 64, 64)
+
+[node name="Hurtbox2D" type="Area2D" parent="Enemy2" unique_id=229435512]
+script = ExtResource("2_ldjk5")
+metadata/_custom_type_script = "uid://dyymmgkcx67da"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2/Hurtbox2D" unique_id=912380303]
+shape = SubResource("CapsuleShape2D_ekwxn")
+
+[node name="Enemy3" type="Sprite2D" parent="." unique_id=1329845866]
+position = Vector2(950, 420)
+texture = ExtResource("1_3ji5u")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(576, 448, 64, 64)
+
+[node name="Hurtbox2D" type="Area2D" parent="Enemy3" unique_id=105905269]
+script = ExtResource("2_ldjk5")
+metadata/_custom_type_script = "uid://dyymmgkcx67da"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3/Hurtbox2D" unique_id=1947279947]
+shape = SubResource("CapsuleShape2D_ekwxn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1082593860]
+layer = -1
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=1981001856]
+material = SubResource("ShaderMaterial_3ji5u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1498544981]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -275.0
+offset_right = 100.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Shoot"
+
+[node name="OneShot" type="CheckButton" parent="CanvasLayer" unique_id=607368315]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -210.0
+offset_right = 100.0
+offset_bottom = -175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/OneShot" unique_id=564214592]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -13.5
+offset_right = 82.0
+offset_bottom = 8.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "OneShot"
+
+[node name="InvincibleFirstEnemy" type="CheckButton" parent="CanvasLayer" unique_id=2142935261]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -160.0
+offset_right = 100.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/InvincibleFirstEnemy" unique_id=1708836497]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -13.5
+offset_right = 163.0
+offset_bottom = 8.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Enemy1 invincible"
