@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://xrsbx7fesp2t"]
+
+[ext_resource type="Script" uid="uid://ducbp3ct3cgv4" path="res://demo/components/one_time_animation_player/one_time_animation_player.gd" id="1_g4wyl"]
+[ext_resource type="PackedScene" uid="uid://bohivismdom1a" path="res://demo/components/one_time_animated_sprite_2d/explosion.tscn" id="2_b6pej"]
+[ext_resource type="Shader" uid="uid://jbottbx2jk2s" path="res://assets/shaders/diamond_background.gdshader" id="3_evdmp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gudb8"]
+shader = ExtResource("3_evdmp")
+shader_parameter/color1 = Color(0.44313726, 0.5568628, 0.81960785, 0.15686275)
+shader_parameter/color2 = Color(0.8, 0.85882354, 0.99215686, 0.15686275)
+shader_parameter/speed = 0.3
+
+[sub_resource type="LabelSettings" id="LabelSettings_crdrx"]
+font_size = 32
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.47843137)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp2tu"]
+bg_color = Color(0, 0, 0, 0.5372549)
+
+[node name="OneTimeAnimatedSprite2D" type="Node2D" unique_id=533886439]
+script = ExtResource("1_g4wyl")
+animation = ExtResource("2_b6pej")
+
+[node name="Animations" type="Node2D" parent="." unique_id=991818067]
+
+[node name="SpawnStart" type="Marker2D" parent="." unique_id=715004269]
+position = Vector2(400, 400)
+
+[node name="SpawnEnd" type="Marker2D" parent="." unique_id=1859280239]
+position = Vector2(900, 600)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=669158521]
+layer = -1
+
+[node name="ColorBackground" type="ColorRect" parent="CanvasLayer" unique_id=1359839180]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=750904296]
+material = SubResource("ShaderMaterial_gudb8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=341805749]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.5
+offset_top = -264.0
+offset_right = 256.5
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "An AnimatedSprite2D auto-plays 
+its animation, then deletes itself."
+label_settings = SubResource("LabelSettings_crdrx")
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1539255105]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -156.0
+offset_right = 125.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spam me!"
+
+[node name="Tree" type="Tree" parent="CanvasLayer" unique_id=2123033373]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -255.0
+offset_right = -290.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jp2tu")
+allow_search = false

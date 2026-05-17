@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diiwu265qkt4k"
-path="res://.godot/imported/hurtbox_2d.svg-a750359dca18b2863bf44cbd3051e759.ctex"
+uid="uid://b0xa1d2vh5py5"
+path="res://.godot/imported/one_time_animated_sprite_2d.svg-1cbf240b9a13d4a5c5878c97ff4da5e3.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://components/hurtbox_2d.svg"
-dest_files=["res://.godot/imported/hurtbox_2d.svg-a750359dca18b2863bf44cbd3051e759.ctex"]
+source_file="res://components/one_time_animated_sprite_2d.svg"
+dest_files=["res://.godot/imported/one_time_animated_sprite_2d.svg-1cbf240b9a13d4a5c5878c97ff4da5e3.ctex"]
 
 [params]
 

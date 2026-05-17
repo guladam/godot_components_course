@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diiwu265qkt4k"
-path="res://.godot/imported/hurtbox_2d.svg-a750359dca18b2863bf44cbd3051e759.ctex"
+uid="uid://xd7q2xe1y0aq"
+path="res://.godot/imported/pixel_effect_22.png-eef5643f3e34c25d3a10ae0777b5aef9.ctex"
 metadata={
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://components/hurtbox_2d.svg"
-dest_files=["res://.godot/imported/hurtbox_2d.svg-a750359dca18b2863bf44cbd3051e759.ctex"]
+source_file="res://assets/retro_pixel_effects/pixel_effect_22.png"
+dest_files=["res://.godot/imported/pixel_effect_22.png-eef5643f3e34c25d3a10ae0777b5aef9.ctex"]
 
 [params]
 
@@ -39,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=true
-editor/convert_colors_with_editor_theme=true

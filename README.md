@@ -4,3 +4,4 @@ A repository of reusable, single-responsibility, self-contained Godot 4 componen
 ## Credits
 
 - Kenney: https://kenney.nl
+- BDragon1727: https://bdragon1727.itch.io/
