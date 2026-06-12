@@ -12,7 +12,9 @@ const TYPES := {
 	"Hitbox2D" : "2D",
 	"Wrap2D": "2D",
 	"OneTimeAnimationPlayer": "GENERAL",
-	"OneTimeAnimatedSprite2D": "2D"
+	"OneTimeAnimatedSprite2D": "2D",
+	"HomingMovement2D": "2D",
+	"VelocityMovement2D": "2D"
 }
 
 const SKIP := ["hurtbox_2d.gd"]

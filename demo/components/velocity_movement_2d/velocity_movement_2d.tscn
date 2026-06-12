@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bii8ki15i4q7n"]
+
+[ext_resource type="Script" uid="uid://bl15x01s7mfnn" path="res://demo/components/velocity_movement_2d/velocity_movement_2d.gd" id="1_r6w4k"]
+[ext_resource type="PackedScene" uid="uid://bi2jmbljgbqjs" path="res://demo/components/velocity_movement_2d/velocity_movement_2d_arrow.tscn" id="2_xsur0"]
+[ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="6_j8ou7"]
+[ext_resource type="Shader" uid="uid://b6ygn1j2aujwh" path="res://assets/shaders/ocean_background.gdshader" id="10_aavum"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ij5q"]
+shader = ExtResource("10_aavum")
+shader_parameter/bottom_color = Color(0.8862745, 0.91764706, 0.9882353, 1)
+shader_parameter/top_color = Color(0.34509805, 0.4509804, 0.78039217, 1)
+shader_parameter/wave_amp = 0.038000001805
+shader_parameter/wave_size = 3.0230000960925
+shader_parameter/wave_time_mul = 0.11000000196512
+shader_parameter/total_phases = 6
+
+[node name="VelocityMovement2D" type="Node2D" unique_id=1640652240]
+script = ExtResource("1_r6w4k")
+arrow_scene = ExtResource("2_xsur0")
+
+[node name="Character" type="Sprite2D" parent="." unique_id=82791303]
+position = Vector2(640, 420)
+texture = ExtResource("6_j8ou7")
+region_enabled = true
+region_rect = Rect2(576, 320, 64, 64)
+
+[node name="Weapon" type="Node2D" parent="Character" unique_id=1386441263]
+
+[node name="Hand1" type="Sprite2D" parent="Character/Weapon" unique_id=505609027]
+position = Vector2(40, 10)
+texture = ExtResource("6_j8ou7")
+region_enabled = true
+region_rect = Rect2(576, 576, 64, 64)
+
+[node name="Bow" type="Sprite2D" parent="Character/Weapon" unique_id=150151737]
+position = Vector2(40, 0)
+texture = ExtResource("6_j8ou7")
+region_enabled = true
+region_rect = Rect2(512, 128, 64, 64)
+
+[node name="Hand2" type="Sprite2D" parent="Character/Weapon" unique_id=1085783344]
+position = Vector2(40, -10)
+texture = ExtResource("6_j8ou7")
+region_enabled = true
+region_rect = Rect2(576, 576, 64, 64)
+
+[node name="Muzzle" type="Marker2D" parent="Character/Weapon" unique_id=1772318108]
+position = Vector2(70, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2102404157]
+layer = -1
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=1483008291]
+material = SubResource("ShaderMaterial_0ij5q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=832354339]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -275.0
+offset_right = 125.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+disabled = true
+text = "Space to fire arrow"
+
+[node name="ArcedShot" type="CheckButton" parent="CanvasLayer" unique_id=221452897]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -210.0
+offset_right = 100.0
+offset_bottom = -175.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/ArcedShot" unique_id=1614780969]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -13.5
+offset_right = 82.0
+offset_bottom = 8.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Gravity (Arc)"

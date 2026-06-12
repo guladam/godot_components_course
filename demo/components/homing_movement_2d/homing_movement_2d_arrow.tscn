@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dlnf3uy73s1hw"]
+
+[ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="1_p8u5h"]
+[ext_resource type="Script" uid="uid://dnfcjslpdxu4y" path="res://components/homing_movement_2d.gd" id="2_p8u5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8u5h"]
+size = Vector2(39, 6)
+
+[node name="HomingMovement2DArrow" type="Area2D" unique_id=1340892412]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=239535267]
+texture = ExtResource("1_p8u5h")
+region_enabled = true
+region_rect = Rect2(512, 256, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=86593369]
+position = Vector2(-2.5, 0)
+shape = SubResource("RectangleShape2D_p8u5h")
+
+[node name="HomingMovement2D" type="Node" parent="." unique_id=1476625860]
+script = ExtResource("2_p8u5h")
+speed = 450.0
+steer_force = 800.0
+metadata/_custom_type_script = "uid://dnfcjslpdxu4y"
+
+[connection signal="area_entered" from="." to="." method="queue_free" unbinds=1]

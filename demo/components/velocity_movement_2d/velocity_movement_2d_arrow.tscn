@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bi2jmbljgbqjs"]
+
+[ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="1_cln85"]
+[ext_resource type="Script" uid="uid://c4ohiw3dpmk8r" path="res://components/velocity_movement_2d.gd" id="2_cln85"]
+
+[node name="VelocityMovement2DArrow" type="Node2D" unique_id=980845690]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=239535267]
+texture = ExtResource("1_cln85")
+region_enabled = true
+region_rect = Rect2(512, 256, 64, 64)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2000965070]
+
+[node name="VelocityMovement2D" type="Node" parent="." unique_id=1182521803]
+script = ExtResource("2_cln85")
+speed = 800.0
+metadata/_custom_type_script = "uid://c4ohiw3dpmk8r"
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="Sprite2D" method="queue_free"]
