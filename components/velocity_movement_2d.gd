@@ -1,3 +1,4 @@
+@tool
 @icon("velocity_movement_2d.svg")
 class_name VelocityMovement2D
 extends Node
@@ -29,7 +30,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func _physics_process(delta: float) -> void:
-	if not is_instance_valid(target):
+	if not is_instance_valid(target) or Engine.is_editor_hint():
 		return
 
 	if gravity > 0:
