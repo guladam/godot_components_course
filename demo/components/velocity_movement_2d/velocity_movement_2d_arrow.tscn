@@ -12,9 +12,10 @@ region_rect = Rect2(512, 256, 64, 64)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2000965070]
 
-[node name="VelocityMovement2D" type="Node" parent="." unique_id=1182521803]
+[node name="VelocityMovement2D" type="Node" parent="." unique_id=1182521803 node_paths=PackedStringArray("target")]
 script = ExtResource("2_cln85")
+target = NodePath("..")
 speed = 800.0
 metadata/_custom_type_script = "uid://c4ohiw3dpmk8r"
 
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="Sprite2D" method="queue_free"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="queue_free"]

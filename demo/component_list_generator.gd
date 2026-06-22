@@ -14,7 +14,8 @@ const TYPES := {
 	"OneTimeAnimationPlayer": "GENERAL",
 	"OneTimeAnimatedSprite2D": "2D",
 	"HomingMovement2D": "2D",
-	"VelocityMovement2D": "2D"
+	"VelocityMovement2D": "2D",
+	"InputBuffer": "GENERAL"
 }
 
 const SKIP := ["hurtbox_2d.gd"]

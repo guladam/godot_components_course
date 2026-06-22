@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_65u6p")
-component_paths = PackedStringArray("res://demo/components/flip_sprite_2d/flip_sprite_2d.tscn", "res://demo/components/hitbox_2d/hitbox_2d.tscn", "res://demo/components/homing_movement_2d/homing_movement_2d.tscn", "res://demo/components/one_time_animated_sprite_2d/one_time_animated_sprite_2d.tscn", "res://demo/components/one_time_animation_player/one_time_animation_player.tscn", "res://demo/components/scene_spawner/scene_spawner.tscn", "res://demo/components/velocity_movement_2d/velocity_movement_2d.tscn", "res://demo/components/wrap_2d/wrap_2d.tscn")
-component_names = PackedStringArray("FlipSprite2D", "Hitbox2D", "HomingMovement2D", "OneTimeAnimatedSprite2D", "OneTimeAnimationPlayer", "SceneSpawner", "VelocityMovement2D", "Wrap2D")
-component_types = Array[int]([0, 0, 0, 0, 2, 2, 0, 0])
+component_paths = PackedStringArray("res://demo/components/flip_sprite_2d/flip_sprite_2d.tscn", "res://demo/components/hitbox_2d/hitbox_2d.tscn", "res://demo/components/homing_movement_2d/homing_movement_2d.tscn", "res://demo/components/input_buffer/input_buffer.tscn", "res://demo/components/one_time_animated_sprite_2d/one_time_animated_sprite_2d.tscn", "res://demo/components/one_time_animation_player/one_time_animation_player.tscn", "res://demo/components/scene_spawner/scene_spawner.tscn", "res://demo/components/velocity_movement_2d/velocity_movement_2d.tscn", "res://demo/components/wrap_2d/wrap_2d.tscn")
+component_names = PackedStringArray("FlipSprite2D", "Hitbox2D", "HomingMovement2D", "InputBuffer", "OneTimeAnimatedSprite2D", "OneTimeAnimationPlayer", "SceneSpawner", "VelocityMovement2D", "Wrap2D")
+component_types = Array[int]([0, 0, 0, 2, 0, 2, 2, 0, 0])

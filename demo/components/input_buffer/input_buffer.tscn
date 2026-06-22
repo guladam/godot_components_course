@@ -1,0 +1,165 @@
+[gd_scene format=4 uid="uid://77khywwagay7"]
+
+[ext_resource type="Script" uid="uid://dl8vmj4b1bjke" path="res://demo/components/input_buffer/input_buffer.gd" id="1_xgnim"]
+[ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="2_my1nr"]
+[ext_resource type="TileSet" uid="uid://0ufumvwvaxs5" path="res://assets/tilesets/kenney_platformer_tiles.tres" id="3_ega7q"]
+[ext_resource type="Texture2D" uid="uid://du4wj4qqihe8l" path="res://assets/kenney_new_platformer_pack/spritesheet_characters_default.png" id="4_gl1i4"]
+[ext_resource type="Script" uid="uid://m2q8x6np8c4p" path="res://components/input_buffer.gd" id="5_xgnim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olf0v"]
+atlas = ExtResource("4_gl1i4")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvepp"]
+atlas = ExtResource("4_gl1i4")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgnim"]
+atlas = ExtResource("4_gl1i4")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3vqm"]
+atlas = ExtResource("4_gl1i4")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vpjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olf0v")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvepp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgnim")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3vqm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emk14"]
+size = Vector2(44, 20)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_f3vqm"]
+
+[node name="InputBuffer" type="Node2D" unique_id=897212505]
+script = ExtResource("1_xgnim")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=171426956]
+modulate = Color(0.48235294, 0.48235294, 0.48235294, 1)
+tile_map_data = PackedByteArray("AAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAD//wEAAAACAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAACAAEAAAD//wIAAAAAAAIAAAAAAAIAAAAAAAIAAAABAAIAAAAAAAIAAAACAAIAAAAAAAIAAAADAAIAAAAAAAIAAAAEAAIAAAAAAAIAAAAFAAIAAAAAAAIAAAAGAAAAAAABAAIAAAAGAAIAAAAAAAIAAAAGAAEAAAACAAEAAAA=")
+tile_set = ExtResource("2_my1nr")
+
+[node name="Tiles" type="TileMapLayer" parent="." unique_id=1992780580]
+tile_map_data = PackedByteArray("AAAAAAgAAQAHAA8AAAABAAgAAQAHAA8AAAACAAgAAQAHAA8AAAADAAgAAQAHAA8AAAAEAAgAAQAHAA8AAAAFAAgAAQAHAA8AAAAGAAgAAQAHAA8AAAAHAAgAAQAHAA8AAAAIAAgAAQAHAA8AAAAJAAgAAQAHAA8AAAAKAAgAAQAHAA8AAAALAAgAAQAHAA8AAAAMAAgAAQAHAA8AAAANAAgAAQAHAA8AAAAOAAgAAQAHAA8AAAAPAAgAAQAHAA8AAAAQAAgAAQAHAA8AAAARAAgAAQAHAA8AAAASAAgAAQAHAA8AAAATAAgAAQAHAA8AAAAUAAgAAQAHAA8AAAD//wgAAQAHAA8AAAAAAAkAAQAIAAAAAAABAAkAAQAIAAAAAAACAAkAAQAIAAAAAAADAAkAAQAIAAAAAAAEAAkAAQAIAAAAAAAFAAkAAQAIAAAAAAAGAAkAAQAIAAAAAAAHAAkAAQAIAAAAAAAIAAkAAQAIAAAAAAAJAAkAAQAIAAAAAAAKAAkAAQAIAAAAAAALAAkAAQAIAAAAAAAMAAkAAQAIAAAAAAANAAkAAQAIAAAAAAAOAAkAAQAIAAAAAAAPAAkAAQAIAAAAAAAQAAkAAQAIAAAAAAARAAkAAQAIAAAAAAASAAkAAQAIAAAAAAATAAkAAQAIAAAAAAAUAAkAAQAIAAAAAAAUAAoAAQAIAAAAAAATAAoAAQAIAAAAAAASAAoAAQAIAAAAAAARAAoAAQAIAAAAAAAQAAoAAQAIAAAAAAAPAAoAAQAIAAAAAAAOAAoAAQAIAAAAAAAUAAsAAQAIAAAAAAATAAsAAQAIAAAAAAASAAsAAQAIAAAAAAARAAsAAQAIAAAAAAAQAAsAAQAIAAAAAAAPAAsAAQAIAAAAAAAOAAsAAQAIAAAAAAANAAsAAQAIAAAAAAAMAAsAAQAIAAAAAAALAAsAAQAIAAAAAAANAAoAAQAIAAAAAAAMAAoAAQAIAAAAAAALAAoAAQAIAAAAAAAKAAoAAQAIAAAAAAAJAAoAAQAIAAAAAAAIAAoAAQAIAAAAAAAHAAoAAQAIAAAAAAAGAAoAAQAIAAAAAAAKAAsAAQAIAAAAAAAJAAsAAQAIAAAAAAAIAAsAAQAIAAAAAAAHAAsAAQAIAAAAAAAGAAsAAQAIAAAAAAAFAAsAAQAIAAAAAAAEAAsAAQAIAAAAAAADAAsAAQAIAAAAAAAFAAoAAQAIAAAAAAAEAAoAAQAIAAAAAAADAAoAAQAIAAAAAAACAAoAAQAIAAAAAAABAAoAAQAIAAAAAAAAAAoAAQAIAAAAAAD//woAAQAIAAAAAAD//wkAAQAIAAAAAAD//wsAAQAIAAAAAAAAAAsAAQAIAAAAAAABAAsAAQAIAAAAAAACAAsAAQAIAAAAAAAVAAsAAQAIAAAAAAAVAAoAAQAIAAAAAAAVAAkAAQAIAAAAAAAVAAgAAQAHAA8AAAD+/wgAAQAHAA8AAAD+/wkAAQAIAAAAAAD+/woAAQAIAAAAAAD+/wsAAQAIAAAAAAA=")
+tile_set = ExtResource("3_ega7q")
+
+[node name="Character" type="CharacterBody2D" parent="." unique_id=1425629951]
+unique_name_in_owner = true
+position = Vector2(640, 448)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character" unique_id=1396760407]
+sprite_frames = SubResource("SpriteFrames_3vpjw")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.18225284
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=1074555086]
+position = Vector2(0, 54)
+shape = SubResource("RectangleShape2D_emk14")
+
+[node name="InputBuffer" type="Node" parent="Character" unique_id=1659785869]
+script = ExtResource("5_xgnim")
+action_name = &"fire"
+metadata/_custom_type_script = "uid://m2q8x6np8c4p"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=208685836]
+
+[node name="ButtonContainers" type="HBoxContainer" parent="UI" unique_id=682896199]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -390.0
+offset_top = 41.0
+offset_right = 390.0
+offset_bottom = 207.0
+grow_horizontal = 2
+theme_override_constants/separation = 15
+
+[node name="ButtonContainer" type="VBoxContainer" parent="UI/ButtonContainers" unique_id=1829583972]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Speed25" type="Button" parent="UI/ButtonContainers/ButtonContainer" unique_id=1219422260]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_f3vqm")
+text = "Game Speed: 25%"
+
+[node name="Speed50" type="Button" parent="UI/ButtonContainers/ButtonContainer" unique_id=1716026569]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_f3vqm")
+text = "Game Speed: 50%"
+
+[node name="Speed100" type="Button" parent="UI/ButtonContainers/ButtonContainer" unique_id=772755127]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_f3vqm")
+text = "Game Speed: 100%"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ButtonContainers" unique_id=1167394358]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="BufferLabel" type="Label" parent="UI/ButtonContainers/VBoxContainer" unique_id=112224524]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Buffer time: 0.15s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BufferSlider" type="HSlider" parent="UI/ButtonContainers/VBoxContainer" unique_id=500752717]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.15
+max_value = 0.5
+step = 0.05
+value = 0.15
+
+[node name="Status" type="Button" parent="UI/ButtonContainers" unique_id=587864693]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+text = "Press Space 
+to Jump"
