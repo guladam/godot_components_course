@@ -1,0 +1,211 @@
+[gd_scene format=4 uid="uid://der4iufg4r2r0"]
+
+[ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="2_28gpe"]
+[ext_resource type="TileSet" uid="uid://0ufumvwvaxs5" path="res://assets/tilesets/kenney_platformer_tiles.tres" id="3_qjqbe"]
+[ext_resource type="Script" uid="uid://disn4qxyq3ejk" path="res://components/finite_state_machine.gd" id="4_0brsf"]
+[ext_resource type="Texture2D" uid="uid://bsukc2ifqhow6" path="res://assets/kenney_new_platformer_pack/spritesheet_enemies_default.png" id="4_6pkgt"]
+[ext_resource type="Script" uid="uid://cneaialibys6r" path="res://demo/components/finite_state_machine/enemy.gd" id="4_28gpe"]
+[ext_resource type="Texture2D" uid="uid://du4wj4qqihe8l" path="res://assets/kenney_new_platformer_pack/spritesheet_characters_default.png" id="4_d63d6"]
+[ext_resource type="Script" uid="uid://bm50e34hc6lkr" path="res://demo/components/finite_state_machine/character.gd" id="6_qjqbe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0brsf"]
+atlas = ExtResource("4_6pkgt")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28gpe"]
+atlas = ExtResource("4_6pkgt")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjqbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0brsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28gpe")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olf0v"]
+atlas = ExtResource("4_d63d6")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvepp"]
+atlas = ExtResource("4_d63d6")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3vqm"]
+atlas = ExtResource("4_d63d6")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pkgt"]
+atlas = ExtResource("4_d63d6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjqbe"]
+atlas = ExtResource("4_d63d6")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vpjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olf0v")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvepp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3vqm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pkgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjqbe")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emk14"]
+size = Vector2(44, 20)
+
+[node name="FiniteStateMachine" type="Node2D" unique_id=897212505]
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=171426956]
+modulate = Color(0.48235294, 0.48235294, 0.48235294, 1)
+tile_map_data = PackedByteArray("AAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAD//wEAAAACAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAACAAEAAAD//wIAAAAAAAIAAAAAAAIAAAAAAAIAAAABAAIAAAAAAAIAAAACAAIAAAAAAAIAAAADAAIAAAAAAAIAAAAEAAIAAAAAAAIAAAAFAAIAAAAAAAIAAAAGAAAAAAABAAIAAAAGAAIAAAAAAAIAAAAGAAEAAAACAAEAAAA=")
+tile_set = ExtResource("2_28gpe")
+
+[node name="Tiles" type="TileMapLayer" parent="." unique_id=1992780580]
+tile_map_data = PackedByteArray("AAAAAAgAAQAHAA8AAAABAAgAAQAHAA8AAAACAAgAAQAHAA8AAAADAAgAAQAHAA8AAAAEAAgAAQAHAA8AAAAFAAgAAQAHAA8AAAAGAAgAAQAHAA8AAAAHAAgAAQAHAA8AAAAIAAgAAQAHAA8AAAAJAAgAAQAHAA8AAAAKAAgAAQAHAA8AAAALAAgAAQAHAA8AAAAMAAgAAQAHAA8AAAANAAgAAQAHAA8AAAAOAAgAAQAHAA8AAAAPAAgAAQAHAA8AAAAQAAgAAQAHAA8AAAARAAgAAQAHAA8AAAASAAgAAQAHAA8AAAATAAgAAQAHAA8AAAAUAAgAAQAIAAAAAAD//wgAAQAIAAAAAAAAAAkAAQAIAAAAAAABAAkAAQAIAAAAAAACAAkAAQAIAAAAAAADAAkAAQAIAAAAAAAEAAkAAQAIAAAAAAAFAAkAAQAIAAAAAAAGAAkAAQAIAAAAAAAHAAkAAQAIAAAAAAAIAAkAAQAIAAAAAAAJAAkAAQAIAAAAAAAKAAkAAQAIAAAAAAALAAkAAQAIAAAAAAAMAAkAAQAIAAAAAAANAAkAAQAIAAAAAAAOAAkAAQAIAAAAAAAPAAkAAQAIAAAAAAAQAAkAAQAIAAAAAAARAAkAAQAIAAAAAAASAAkAAQAIAAAAAAATAAkAAQAIAAAAAAAUAAkAAQAIAAAAAAAUAAoAAQAIAAAAAAATAAoAAQAIAAAAAAASAAoAAQAIAAAAAAARAAoAAQAIAAAAAAAQAAoAAQAIAAAAAAAPAAoAAQAIAAAAAAAOAAoAAQAIAAAAAAAUAAsAAQAIAAAAAAATAAsAAQAIAAAAAAASAAsAAQAIAAAAAAARAAsAAQAIAAAAAAAQAAsAAQAIAAAAAAAPAAsAAQAIAAAAAAAOAAsAAQAIAAAAAAANAAsAAQAIAAAAAAAMAAsAAQAIAAAAAAALAAsAAQAIAAAAAAANAAoAAQAIAAAAAAAMAAoAAQAIAAAAAAALAAoAAQAIAAAAAAAKAAoAAQAIAAAAAAAJAAoAAQAIAAAAAAAIAAoAAQAIAAAAAAAHAAoAAQAIAAAAAAAGAAoAAQAIAAAAAAAKAAsAAQAIAAAAAAAJAAsAAQAIAAAAAAAIAAsAAQAIAAAAAAAHAAsAAQAIAAAAAAAGAAsAAQAIAAAAAAAFAAsAAQAIAAAAAAAEAAsAAQAIAAAAAAADAAsAAQAIAAAAAAAFAAoAAQAIAAAAAAAEAAoAAQAIAAAAAAADAAoAAQAIAAAAAAACAAoAAQAIAAAAAAABAAoAAQAIAAAAAAAAAAoAAQAIAAAAAAD//woAAQAIAAAAAAD//wkAAQAIAAAAAAD//wsAAQAIAAAAAAAAAAsAAQAIAAAAAAABAAsAAQAIAAAAAAACAAsAAQAIAAAAAAAVAAsAAQAIAAAAAAAVAAoAAQAIAAAAAAAVAAkAAQAIAAAAAAAVAAgAAQAIAAAAAAD+/wgAAQAIAAAAAAD+/wkAAQAIAAAAAAD+/woAAQAIAAAAAAD+/wsAAQAIAAAAAAAGAAMAAQAIAAQAAAACAAYAAQAIAAQAAAAUAAcAAQAIAAAAAAAUAAYAAQAIAAAAAAAUAAUAAQAIAAAAAAAUAAQAAQAIAAAAAAAUAAMAAQAIAAAAAAD//wcAAQAIAAAAAAD//wYAAQAIAAAAAAD//wUAAQAIAAAAAAD//wQAAQAIAAAAAAD//wMAAQAIAAAAAAD+/wMAAQAIAAAAAAD+/wQAAQAIAAAAAAD+/wUAAQAIAAAAAAD+/wYAAQAIAAAAAAD+/wcAAQAIAAAAAAAVAAMAAQAIAAAAAAAVAAQAAQAIAAAAAAAVAAUAAQAIAAAAAAAVAAYAAQAIAAAAAAAVAAcAAQAIAAAAAAANAAMAAQAIAAQAAAAEAAUAAQAIAAQAAAA=")
+tile_set = ExtResource("3_qjqbe")
+
+[node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1744515649]
+unique_name_in_owner = true
+position = Vector2(647, 228)
+sprite_frames = SubResource("SpriteFrames_qjqbe")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.7736721
+flip_h = true
+script = ExtResource("4_28gpe")
+
+[node name="LeftRayCast2D" type="RayCast2D" parent="Enemy" unique_id=219087435]
+target_position = Vector2(-48, 0)
+
+[node name="RightRayCast2D" type="RayCast2D" parent="Enemy" unique_id=1379808875]
+target_position = Vector2(48, 0)
+
+[node name="Label" type="Label" parent="Enemy" unique_id=1701116659]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -86.0
+offset_right = 38.5
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EnemyIdleState"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="Enemy" unique_id=1368503042]
+wait_time = 5.0
+one_shot = true
+
+[node name="FiniteStateMachine" type="Node" parent="Enemy" unique_id=513399418]
+script = ExtResource("4_0brsf")
+metadata/_custom_type_script = "uid://disn4qxyq3ejk"
+
+[node name="Character" type="CharacterBody2D" parent="." unique_id=1425629951]
+unique_name_in_owner = true
+position = Vector2(640, 448)
+script = ExtResource("6_qjqbe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character" unique_id=1396760407]
+sprite_frames = SubResource("SpriteFrames_3vpjw")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.64854795
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=1074555086]
+position = Vector2(0, 54)
+shape = SubResource("RectangleShape2D_emk14")
+
+[node name="Label" type="Label" parent="Character" unique_id=1895666757]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -62.0
+offset_right = 68.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PlayerIdleState"
+horizontal_alignment = 1
+
+[node name="FiniteStateMachine" type="Node" parent="Character" unique_id=1876864642]
+script = ExtResource("4_0brsf")
+metadata/_custom_type_script = "uid://disn4qxyq3ejk"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=208685836]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=35029212]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -276.0
+offset_right = 20.0
+offset_bottom = -236.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Status" type="Button" parent="UI/HBoxContainer" unique_id=1659345064]
+custom_minimum_size = Vector2(210, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+text = "Use A and D or the
+arrow keys to move"
+
+[node name="Status2" type="Button" parent="UI/HBoxContainer" unique_id=587864693]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+text = "Press Space 
+to Jump"

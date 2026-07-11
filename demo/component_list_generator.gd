@@ -15,10 +15,11 @@ const TYPES := {
 	"OneTimeAnimatedSprite2D": "2D",
 	"HomingMovement2D": "2D",
 	"VelocityMovement2D": "2D",
-	"InputBuffer": "GENERAL"
+	"InputBuffer": "GENERAL",
+	"FiniteStateMachine": "GENERAL"
 }
 
-const SKIP := ["hurtbox_2d.gd"]
+const SKIP := ["hurtbox_2d.gd", "state.gd"]
 
 func _run() -> void:
 	var component_paths: PackedStringArray = []
