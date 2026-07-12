@@ -8,6 +8,9 @@ extends Node
 ## this machine instantiates state scripts dynamically into memory, 
 ## keeping the scene hierarchy clean.
 
+## Emitted when [method change_state] successfully changes to a new [State].
+signal state_changed
+
 ## Parent [Node] of the FSM. This Node is the actor 
 ## accessible for all [State]s.
 @onready var parent := get_parent()
@@ -48,6 +51,7 @@ func change_state(new_state_class: GDScript) -> State:
 	current_state = next
 	current_state.actor = parent
 	current_state.enter()
+    state_changed.emit()
 
 
 	return current_state
