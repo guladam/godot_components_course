@@ -2,6 +2,7 @@
 class_name FiniteStateMachine
 extends Node
 
+@onready var parent: Node = get_parent()
 var current_state: State
 
 
@@ -31,7 +32,7 @@ func change_state(new_state_class: GDScript) -> State:
 		return null
 		
 	current_state = next
-	current_state.actor = get_parent()
+	current_state.actor = parent
 	current_state.enter()
 
 

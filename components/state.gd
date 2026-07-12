@@ -1,7 +1,7 @@
 class_name State
 extends RefCounted
 
-var actor: Node2D
+var actor: Node
 
 
 func enter() -> void:

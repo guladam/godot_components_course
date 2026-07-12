@@ -8,6 +8,10 @@ extends Node
 ## this machine instantiates state scripts dynamically into memory, 
 ## keeping the scene hierarchy clean.
 
+## Parent [Node] of the FSM. This Node is the actor 
+## accessible for all [State]s.
+@onready var parent := get_parent()
+
 ## The currently active lifecycle state.
 var current_state: State
 
@@ -42,7 +46,7 @@ func change_state(new_state_class: GDScript) -> State:
 		return null
 		
 	current_state = next
-	current_state.actor = get_parent()
+	current_state.actor = parent
 	current_state.enter()
 
 

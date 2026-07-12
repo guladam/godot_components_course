@@ -8,7 +8,7 @@ extends RefCounted
 
 ## The root execution node this state is controlling (e.g., a CharacterBody2D).
 ## This is the parent Node of the [FiniteStateMachine] in the SceneTree.
-var actor: Node2D
+var actor: Node
 
 
 ## Called immediately when the state machine transitions into this state.
