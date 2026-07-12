@@ -1,6 +1,9 @@
 class_name PlayerJumpState
 extends State
 
+signal landed
+signal landed_with_movement
+
 var player: Player
 
 
@@ -26,6 +29,6 @@ func physics_update(delta: float) -> void:
 	
 	if player.is_on_floor():
 		if not is_zero_approx(direction):
-			player.finite_state_machine.change_state(PlayerRunState)
+			landed_with_movement.emit()
 		else:
-			player.finite_state_machine.change_state(PlayerIdleState)
+			landed.emit()

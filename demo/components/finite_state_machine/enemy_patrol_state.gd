@@ -6,8 +6,6 @@ var enemy: Enemy
 
 func enter() -> void:
 	enemy = actor as Enemy
-	enemy.timer.start()
-	enemy.timer.timeout.connect(_on_timer_expired, CONNECT_ONE_SHOT)
 
 
 func physics_update(delta: float) -> void:
@@ -16,7 +14,3 @@ func physics_update(delta: float) -> void:
 		enemy.flip_h = not enemy.flip_h
 	
 	enemy.position += enemy.direction * enemy.fly_speed * delta
-
-
-func _on_timer_expired() -> void:
-	enemy.finite_state_machine.change_state(EnemyIdleState)

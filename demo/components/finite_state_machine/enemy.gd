@@ -13,8 +13,23 @@ var direction: Vector2 = Vector2.RIGHT
 
 
 func _ready() -> void:
-	finite_state_machine.change_state(EnemyIdleState)
+	_idle()
 
 
 func _process(_delta: float) -> void:
 	label.text = finite_state_machine.current_state.get_script().get_global_name()
+
+
+func _idle() -> void:
+	timer.wait_time = 2.0
+	timer.start()
+	finite_state_machine.change_state(EnemyIdleState)
+	timer.timeout.connect(_patrol, CONNECT_ONE_SHOT)
+
+
+func _patrol() -> void:
+	timer.wait_time = 6.0
+	timer.start(	)
+	finite_state_machine.change_state(EnemyPatrolState)
+	timer.timeout.connect(_idle, CONNECT_ONE_SHOT)
+	

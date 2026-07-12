@@ -1,6 +1,9 @@
 class_name PlayerIdleState
 extends State
 
+signal jump_pressed
+signal move_pressed
+
 var player: Player
 
 
@@ -19,8 +22,8 @@ func physics_update(_delta: float) -> void:
 
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
-		player.finite_state_machine.change_state(PlayerJumpState)
+		jump_pressed.emit()
 	else:
 		var direction := Input.get_axis("move_left", "move_right")
 		if not is_zero_approx(direction):
-			player.finite_state_machine.change_state(PlayerRunState)
+			move_pressed.emit()

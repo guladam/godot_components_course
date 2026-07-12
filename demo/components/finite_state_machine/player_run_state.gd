@@ -1,6 +1,10 @@
 class_name PlayerRunState
 extends State
 
+signal stopped
+signal jump_pressed
+signal fell
+
 var player: Player
 
 
@@ -19,15 +23,15 @@ func physics_update(_delta: float) -> void:
 		player.velocity.x = direction * player.move_speed
 		player.animated_sprite_2d.flip_h = direction < 0.0
 	else:
-		player.finite_state_machine.change_state(PlayerIdleState)
+		stopped.emit()
 		return
 
 	player.move_and_slide()
 
 	if not player.is_on_floor():
-		player.finite_state_machine.change_state(PlayerJumpState)
+		fell.emit()
 
 
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
-		player.finite_state_machine.change_state(PlayerJumpState)
+		jump_pressed.emit()
