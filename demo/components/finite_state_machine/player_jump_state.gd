@@ -19,7 +19,7 @@ func physics_update(delta: float) -> void:
 	
 	var direction := Input.get_axis("move_left", "move_right")
 	if not is_zero_approx(direction):
-		player.velocity.x = direction * player.move_speed * 0.7
+		player.velocity.x = direction * player.move_speed * player.air_control
 		player.animated_sprite_2d.flip_h = direction < 0.0
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0.0, player.move_speed * 2 * delta)

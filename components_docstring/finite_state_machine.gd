@@ -53,5 +53,4 @@ func change_state(new_state_class: GDScript) -> State:
 	current_state.enter()
     state_changed.emit()
 
-
 	return current_state

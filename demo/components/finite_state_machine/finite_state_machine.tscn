@@ -109,7 +109,8 @@ position = Vector2(647, 228)
 sprite_frames = SubResource("SpriteFrames_qjqbe")
 animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.7736721
+frame = 1
+frame_progress = 0.64836705
 flip_h = true
 script = ExtResource("4_28gpe")
 
@@ -151,7 +152,7 @@ script = ExtResource("6_qjqbe")
 sprite_frames = SubResource("SpriteFrames_3vpjw")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.64854795
+frame_progress = 0.5642542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=1074555086]
 position = Vector2(0, 54)
