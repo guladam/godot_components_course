@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clg03uqjt2fft"
-path="res://.godot/imported/finite_state_machine.svg-86ce2f10100f69cf002add28454d20a4.ctex"
+uid="uid://qs70elwrckns"
+path="res://.godot/imported/juicer.svg-7b7d5e1c8c8dbfba61bae54aeeafa4c6.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://components/finite_state_machine.svg"
-dest_files=["res://.godot/imported/finite_state_machine.svg-86ce2f10100f69cf002add28454d20a4.ctex"]
+source_file="res://components/juicer.svg"
+dest_files=["res://.godot/imported/juicer.svg-7b7d5e1c8c8dbfba61bae54aeeafa4c6.ctex"]
 
 [params]
 

@@ -16,10 +16,19 @@ const TYPES := {
 	"HomingMovement2D": "2D",
 	"VelocityMovement2D": "2D",
 	"InputBuffer": "GENERAL",
-	"FiniteStateMachine": "GENERAL"
+	"FiniteStateMachine": "GENERAL",
+	"Juicer": "UI"
 }
 
-const SKIP := ["hurtbox_2d.gd", "state.gd"]
+const SKIP := [
+	"hurtbox_2d.gd",
+	"state.gd",
+	"juicer_effect.gd",
+	"juicer_effect_group.gd",
+	"juicer_scale_effect.gd",
+	"juicer_bounce_effect.gd"
+]
+
 
 func _run() -> void:
 	var component_paths: PackedStringArray = []
