@@ -26,6 +26,7 @@ const SKIP := [
 	"juicer_effect.gd",
 	"juicer_effect_group.gd",
 	"juicer_scale_effect.gd",
+	"juicer_modulate_effect.gd",
 	"juicer_bounce_effect.gd"
 ]
 
