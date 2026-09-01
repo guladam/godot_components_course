@@ -1,0 +1,394 @@
+[gd_scene format=4 uid="uid://bbq27k4l20rvm"]
+
+[ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="1_nh6ky"]
+[ext_resource type="Script" uid="uid://1x7rrx35sylj" path="res://demo/components/juicer/juicer.gd" id="1_s6bkc"]
+[ext_resource type="Script" uid="uid://bo83g4v35paof" path="res://components/juicer.gd" id="2_0rdu8"]
+[ext_resource type="Script" uid="uid://c8sad24jusmy0" path="res://components/juicer_effect_group.gd" id="3_s6bkc"]
+[ext_resource type="Script" uid="uid://bob3vbe7swlsl" path="res://components/juicer_effect.gd" id="4_fsb7w"]
+[ext_resource type="Script" uid="uid://bivg56fu72v5" path="res://components/juicer_scale_effect.gd" id="5_mlyra"]
+[ext_resource type="Script" uid="uid://d2mb4s7eef6hc" path="res://components/juicer_bounce_effect.gd" id="7_fsb7w"]
+[ext_resource type="Script" uid="uid://beuvet8oaxgyw" path="res://components/juicer_modulate_effect.gd" id="8_mlyra"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_acn12"]
+texture = ExtResource("1_nh6ky")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hyg70"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_acn12")
+
+[sub_resource type="Resource" id="Resource_rswro"]
+script = ExtResource("5_mlyra")
+metadata/_custom_type_script = "uid://bivg56fu72v5"
+
+[sub_resource type="Resource" id="Resource_7v5q7"]
+script = ExtResource("5_mlyra")
+scale_amount = Vector2(0.8, 1.2)
+duration = 0.25
+metadata/_custom_type_script = "uid://bivg56fu72v5"
+
+[sub_resource type="Resource" id="Resource_2ysf4"]
+script = ExtResource("5_mlyra")
+scale_amount = Vector2(1, 1)
+metadata/_custom_type_script = "uid://bivg56fu72v5"
+
+[sub_resource type="Resource" id="Resource_hyg70"]
+script = ExtResource("3_s6bkc")
+identifier = &"squash_and_stretch"
+effects = Array[ExtResource("4_fsb7w")]([SubResource("Resource_rswro"), SubResource("Resource_7v5q7"), SubResource("Resource_2ysf4")])
+metadata/_custom_type_script = "uid://c8sad24jusmy0"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyg70"]
+atlas = ExtResource("1_nh6ky")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hyg70"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_7jv1w"]
+script = ExtResource("5_mlyra")
+scale_amount = Vector2(1, 1)
+duration = 0.25
+metadata/_custom_type_script = "uid://bivg56fu72v5"
+
+[sub_resource type="Resource" id="Resource_s6i3m"]
+script = ExtResource("8_mlyra")
+color = Color(1, 1, 1, 1)
+duration = 0.25
+metadata/_custom_type_script = "uid://beuvet8oaxgyw"
+
+[sub_resource type="Resource" id="Resource_w7ak5"]
+script = ExtResource("3_s6bkc")
+parallel = true
+effects = Array[ExtResource("4_fsb7w")]([SubResource("Resource_7jv1w"), SubResource("Resource_s6i3m")])
+metadata/_custom_type_script = "uid://c8sad24jusmy0"
+
+[sub_resource type="Resource" id="Resource_hg40r"]
+script = ExtResource("5_mlyra")
+scale_amount = Vector2(0, 0)
+duration = 0.25
+ease_type = 0
+metadata/_custom_type_script = "uid://bivg56fu72v5"
+
+[sub_resource type="Resource" id="Resource_3lpo8"]
+script = ExtResource("8_mlyra")
+duration = 0.25
+ease_type = 0
+metadata/_custom_type_script = "uid://beuvet8oaxgyw"
+
+[sub_resource type="Resource" id="Resource_klsbm"]
+script = ExtResource("3_s6bkc")
+identifier = &"pop_out"
+parallel = true
+effects = Array[ExtResource("4_fsb7w")]([SubResource("Resource_hg40r"), SubResource("Resource_3lpo8")])
+metadata/_custom_type_script = "uid://c8sad24jusmy0"
+
+[sub_resource type="Resource" id="Resource_fsb7w"]
+script = ExtResource("7_fsb7w")
+bounce_offset = Vector2(0, -16)
+duration = 1.0
+metadata/_custom_type_script = "uid://d2mb4s7eef6hc"
+
+[sub_resource type="Resource" id="Resource_s6bkc"]
+script = ExtResource("3_s6bkc")
+identifier = &"bounce"
+effects = Array[ExtResource("4_fsb7w")]([SubResource("Resource_fsb7w")])
+metadata/_custom_type_script = "uid://c8sad24jusmy0"
+
+[sub_resource type="Resource" id="Resource_ik4ek"]
+script = ExtResource("5_mlyra")
+scale_amount = Vector2(1.2, 1.2)
+duration = 0.2
+control_offset = true
+metadata/_custom_type_script = "uid://bivg56fu72v5"
+
+[sub_resource type="Resource" id="Resource_mrt34"]
+script = ExtResource("8_mlyra")
+color = Color(0.95686275, 0.8980392, 0.96862745, 1)
+duration = 0.2
+metadata/_custom_type_script = "uid://beuvet8oaxgyw"
+
+[sub_resource type="Resource" id="Resource_2k7ux"]
+script = ExtResource("3_s6bkc")
+identifier = &"highlight"
+parallel = true
+effects = Array[ExtResource("4_fsb7w")]([SubResource("Resource_ik4ek"), SubResource("Resource_mrt34")])
+metadata/_custom_type_script = "uid://c8sad24jusmy0"
+
+[sub_resource type="Resource" id="Resource_0wkd7"]
+script = ExtResource("5_mlyra")
+scale_amount = Vector2(1, 1)
+duration = 0.2
+control_offset = true
+metadata/_custom_type_script = "uid://bivg56fu72v5"
+
+[sub_resource type="Resource" id="Resource_ygor1"]
+script = ExtResource("8_mlyra")
+color = Color(1, 1, 1, 1)
+duration = 0.2
+metadata/_custom_type_script = "uid://beuvet8oaxgyw"
+
+[sub_resource type="Resource" id="Resource_mlyra"]
+script = ExtResource("3_s6bkc")
+identifier = &"reset"
+parallel = true
+effects = Array[ExtResource("4_fsb7w")]([SubResource("Resource_0wkd7"), SubResource("Resource_ygor1")])
+metadata/_custom_type_script = "uid://c8sad24jusmy0"
+
+[node name="Juicer" type="Node2D" unique_id=1803674976]
+script = ExtResource("1_s6bkc")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=293269902]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer" unique_id=1831922904]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03137255, 0.03137255, 0.03137255, 1)
+
+[node name="Background1" type="TileMapLayer" parent="." unique_id=302549117]
+tile_map_data = PackedByteArray("AAACAAEAAQAAAAAAAAADAAEAAQABAAAAAAAJAAIAAQAAAAAAAAAKAAIAAQABAAAAAAAOAAEAAQAAAAEAAAAPAAEAAQABAAEAAAASAAMAAQAAAAAAAAATAAMAAQABAAAAAAACAAcAAQAKAAEAAAACAAgAAQAKAAIAAAABAAkAAQAGAAkAAAACAAkAAQAGAAkAAAADAAkAAQAGAAkAAAAEAAkAAQAGAAkAAAAFAAkAAQAGAAkAAAAAAAkAAQAGAAkAAAAAAAoAAQAGAAkAAAABAAoAAQAGAAkAAAACAAoAAQAGAAkAAAADAAoAAQAGAAkAAAAEAAoAAQAGAAkAAAAFAAoAAQAGAAkAAAAGAAoAAQAGAAkAAAAHAAoAAQAGAAkAAAAIAAoAAQAGAAkAAAAJAAoAAQAGAAkAAAAKAAoAAQAGAAkAAAALAAoAAQAGAAkAAAAMAAoAAQAGAAkAAAANAAoAAQAGAAkAAAAOAAoAAQAGAAkAAAAPAAoAAQAGAAkAAAAQAAoAAQAGAAkAAAARAAoAAQAGAAkAAAASAAoAAQAGAAkAAAATAAoAAQAGAAkAAAATAAkAAQAGAAkAAAASAAkAAQAGAAkAAAARAAkAAQAGAAkAAAAQAAkAAQAGAAkAAAAPAAkAAQAGAAkAAAAOAAkAAQAGAAkAAAANAAkAAQAGAAkAAAAMAAkAAQAGAAkAAAALAAkAAQAGAAkAAAAKAAkAAQAGAAkAAAAJAAkAAQAGAAkAAAAIAAkAAQAGAAkAAAAHAAkAAQAGAAkAAAAGAAkAAQAGAAkAAAAGAAYAAQAFAAUAAAAGAAcAAQAFAAUAAAAGAAgAAQAFAAUAAAAHAAgAAQAFAAkAAAAIAAgAAQAFAAkAAAAJAAgAAQAFAAkAAAAKAAgAAQAFAAgAAAALAAgAAQAFAAkAAAAMAAgAAQAFAAkAAAANAAgAAQAFAAkAAAAOAAgAAQAFAAUAAAAOAAcAAQAFAAUAAAAOAAYAAQAFAAUAAAANAAYAAQAFAAUAAAAMAAYAAQAFAAUAAAALAAYAAQAFAAUAAAAKAAYAAQAFAAUAAAAJAAYAAQAFAAUAAAAIAAYAAQAFAAUAAAAHAAYAAQAFAAUAAAAHAAcAAQAFAAUAAAAIAAcAAQAFAAcAAAAJAAcAAQAFAAUAAAAKAAcAAQAFAAUAAAALAAcAAQAFAAUAAAAMAAcAAQAFAAcAAAANAAcAAQAFAAUAAAAIAAUAAQAGAAgAAAAMAAUAAQAGAAgAAAAGAAQAAQAKAAUAAAAOAAQAAQAKAAUAAAAGAAUAAQAFAAUAAAAOAAUAAQAFAAUAAAADAAMAAQAAAAEAAAAEAAMAAQABAAEAAAABAAcAAQAKAAMAAAABAAgAAQAKAAQAAAADAAcAAQAKAAMAAAADAAgAAQAKAAQAAAATAAcAAQAKAAMAAAATAAgAAQAKAAQAAAASAAcAAQAKAAEAAAASAAgAAQAKAAIAAAAQAAcAAQAKAAEAAAAQAAgAAQAKAAIAAAAAAAcAAQAKAAEAAAAAAAgAAQAKAAIAAAA=")
+tile_set = SubResource("TileSet_hyg70")
+
+[node name="Character" type="Sprite2D" parent="." unique_id=164643251]
+position = Vector2(543, 292)
+texture = ExtResource("1_nh6ky")
+region_enabled = true
+region_rect = Rect2(576, 64, 64, 64)
+
+[node name="CharacterJuicer" type="Node" parent="Character" unique_id=63793957 node_paths=PackedStringArray("target")]
+unique_name_in_owner = true
+script = ExtResource("2_0rdu8")
+target = NodePath("..")
+effect_groups = Array[ExtResource("3_s6bkc")]([SubResource("Resource_hyg70")])
+metadata/_custom_type_script = "uid://bo83g4v35paof"
+
+[node name="TextBubble" type="NinePatchRect" parent="Character" unique_id=1920098657]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = -80.0
+offset_right = 4.0
+offset_bottom = -32.0
+grow_horizontal = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 1)
+texture = SubResource("AtlasTexture_hyg70")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Label" type="Label" parent="Character/TextBubble" unique_id=1202960025]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 19.0
+grow_horizontal = 2
+text = "Hello!"
+label_settings = SubResource("LabelSettings_hyg70")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BubbleJuicer" type="Node" parent="Character/TextBubble" unique_id=1830494138 node_paths=PackedStringArray("target")]
+unique_name_in_owner = true
+script = ExtResource("2_0rdu8")
+target = NodePath("..")
+effect_groups = Array[ExtResource("3_s6bkc")]([SubResource("Resource_w7ak5"), SubResource("Resource_klsbm")])
+metadata/_custom_type_script = "uid://bo83g4v35paof"
+
+[node name="Target" type="Sprite2D" parent="." unique_id=1555595019]
+modulate = Color(0.54359114, 1, 0.57726276, 1)
+position = Vector2(800, 292)
+texture = ExtResource("1_nh6ky")
+region_enabled = true
+region_rect = Rect2(448, 192, 64, 64)
+
+[node name="TargetJuicer" type="Node" parent="Target" unique_id=1609703229 node_paths=PackedStringArray("target")]
+unique_name_in_owner = true
+script = ExtResource("2_0rdu8")
+target = NodePath("..")
+effect_groups = Array[ExtResource("3_s6bkc")]([SubResource("Resource_s6bkc")])
+metadata/_custom_type_script = "uid://bo83g4v35paof"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=353335616]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI" unique_id=340926155]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = -86.0
+offset_right = 300.0
+offset_bottom = 86.0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="PopInTextButton" type="Button" parent="UI/VBoxContainer" unique_id=1458825524]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+offset_transform_enabled = true
+text = "Pop In Text Bubble"
+
+[node name="PopOutTextButton" type="Button" parent="UI/VBoxContainer" unique_id=969114142]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+text = "Pop Out Text Bubble"
+
+[node name="BounceTargetButton" type="Button" parent="UI/VBoxContainer" unique_id=1508257504]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+text = "Bounce Target"
+
+[node name="SquashAndStretchButton" type="Button" parent="UI/VBoxContainer" unique_id=1669857877]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+text = "Squash & Stretch"
+
+[node name="JuiceButton" type="Button" parent="UI" unique_id=128446226]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 40.0
+offset_right = 100.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "Juice 1st Button"
+
+[node name="ButtonJuicer" type="Node" parent="UI" unique_id=801346829 node_paths=PackedStringArray("target")]
+unique_name_in_owner = true
+script = ExtResource("2_0rdu8")
+target = NodePath("../VBoxContainer/PopInTextButton")
+effect_groups = Array[ExtResource("3_s6bkc")]([SubResource("Resource_2k7ux"), SubResource("Resource_mlyra")])
+metadata/_custom_type_script = "uid://bo83g4v35paof"

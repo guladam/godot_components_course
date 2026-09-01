@@ -1,4 +1,4 @@
-class_name BounceEffect
+class_name JuicerBounceEffect
 extends JuicerEffect
 ## Animates a target's position up and down relative to its starting point.
 ##
@@ -26,15 +26,19 @@ extends JuicerEffect
 
 func apply_to_tween(target: CanvasItem, tween: Tween) -> void:
 	var half_duration: float = duration * 0.5
+	var position_property := "position"
+	
+	if can_use_offset(target):
+		position_property = "offset_position"
 	
 	# Phase 1: Rise relative to current position
-	tween.tween_property(target, "position", bounce_offset, half_duration)\
+	tween.tween_property(target, position_property, bounce_offset, half_duration)\
 		.as_relative()\
 		.set_trans(trans_type)\
 		.set_ease(ease_up)
 		
 	# Phase 2: Fall back down to original position
-	tween.tween_property(target, "position", -bounce_offset, half_duration)\
+	tween.tween_property(target, position_property, -bounce_offset, half_duration)\
 		.as_relative()\
 		.set_trans(trans_type)\
 		.set_ease(ease_down)
