@@ -166,6 +166,7 @@ font_color = Color(0, 0, 0, 1)
 script = ExtResource("5_mlyra")
 scale_amount = Vector2(1, 1)
 duration = 0.25
+absolute = true
 metadata/_custom_type_script = "uid://bivg56fu72v5"
 
 [sub_resource type="Resource" id="Resource_s6i3m"]
@@ -184,6 +185,7 @@ metadata/_custom_type_script = "uid://c8sad24jusmy0"
 script = ExtResource("5_mlyra")
 scale_amount = Vector2(0, 0)
 duration = 0.25
+absolute = true
 ease_type = 0
 metadata/_custom_type_script = "uid://bivg56fu72v5"
 
@@ -216,6 +218,7 @@ metadata/_custom_type_script = "uid://c8sad24jusmy0"
 script = ExtResource("5_mlyra")
 scale_amount = Vector2(1.2, 1.2)
 duration = 0.2
+absolute = true
 control_offset = true
 metadata/_custom_type_script = "uid://bivg56fu72v5"
 
@@ -236,6 +239,7 @@ metadata/_custom_type_script = "uid://c8sad24jusmy0"
 script = ExtResource("5_mlyra")
 scale_amount = Vector2(1, 1)
 duration = 0.2
+absolute = true
 control_offset = true
 metadata/_custom_type_script = "uid://bivg56fu72v5"
 

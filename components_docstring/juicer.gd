@@ -1,10 +1,19 @@
 @icon("juicer.svg")
 class_name Juicer
 extends Node
+## Drives data-driven 2D and UI animations using [JuicerEffectGroup] resources.
+##
+## Acts as a central execution manager for procedural visual effects ("juice"). 
+## Delegates animation playback to dynamic resource configurations.
 
+## Emitted when a non-looping [JuicerEffectGroup] animation completes execution.
 signal group_tween_finished(group_name: StringName)
 
+## The target [CanvasItem] ([Control] or [Node2D]) to apply visual animations onto.
+## Defaults automatically to the parent node if left unassigned.
 @export var target: CanvasItem
+
+## The list of executable [JuicerEffectGroup] animation presets assigned to this component.
 @export var effect_groups: Array[JuicerEffectGroup] = []
 
 var _active_tween: Tween
@@ -15,6 +24,10 @@ func _ready() -> void:
 		target = get_parent() as CanvasItem
 
 
+## Plays an [JuicerEffectGroup] animation sequence by its [StringName] identifier.
+## [br][br]
+## If [param loop] is set to [code]true[/code], the tween repeats indefinitely 
+## until [method stop] is invoked.
 func play(group_name: StringName, loop: bool = false) -> void:
 	if not target:
 		push_error("Juicer: Target node is not assigned.")
@@ -48,6 +61,7 @@ func play(group_name: StringName, loop: bool = false) -> void:
 	)
 
 
+## Stops all currently running animation tweens immediately without emitting signals.
 func stop() -> void:
 	if _active_tween and _active_tween.is_running():
 		_active_tween.kill()

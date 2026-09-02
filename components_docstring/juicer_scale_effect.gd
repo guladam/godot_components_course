@@ -1,10 +1,24 @@
 class_name JuicerScaleEffect
 extends JuicerEffect
+## Procedural scaling effect supporting both relative juice squishes and absolute scale targets.
+##
+## Designed to be stored inside a [JuicerEffectGroup] resource preset.
 
+## Target scale vector. Represents an absolute target when [member absolute] is [code]true[/code], 
+## or a multiplicative scale factor when [member absolute] is [code]false[/code].
 @export var scale_amount: Vector2 = Vector2(1.2, 0.8)
+
+## Duration of the scaling transition in seconds.
 @export var duration: float = 0.15
+
+## When [code]true[/code], scales directly to [member scale_amount].
+## When [code]false[/code], scales relative to the target's current scale factor.
 @export var absolute: bool = false
+
+## Transition curve style for the scaling tween.
 @export var trans_type: Tween.TransitionType = Tween.TRANS_BACK
+
+## Easing behavior curve for the scaling tween.
 @export var ease_type: Tween.EaseType = Tween.EASE_OUT
 
 

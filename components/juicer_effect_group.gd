@@ -1,10 +1,10 @@
 class_name JuicerEffectGroup
 extends Resource
-## A named collection of [JuicerEffect]s played together or sequentially.
 
 @export var identifier: StringName = &"pop_in"
 @export var parallel: bool = false
 @export var effects: Array[JuicerEffect] = []
+
 
 func empty() -> bool:
 	var filtered_effects: Array[JuicerEffect] = effects.filter(
@@ -13,4 +13,3 @@ func empty() -> bool:
 	)
 	
 	return filtered_effects.is_empty()
-	
