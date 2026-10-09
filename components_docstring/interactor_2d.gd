@@ -52,16 +52,15 @@ func get_best_interactable() -> Interactable2D:
 		return null
 
 	var best_target: Interactable2D = null
-	var shortest_distance_sq: float = INF
-	var global_origin: Vector2 = global_position
+	var shortest_dist_sq: float = INF
 
 	for interactable in _nearby_interactables:
 		if not interactable.monitorable:
 			continue
 
-		var dist_sq: float = global_origin.distance_squared_to(interactable.global_position)
-		if dist_sq < shortest_distance_sq:
-			shortest_distance_sq = dist_sq
+		var dist_sq: float = global_position.distance_squared_to(interactable.global_position)
+		if dist_sq < shortest_dist_sq:
+			shortest_dist_sq = dist_sq
 			best_target = interactable
 
 	return best_target

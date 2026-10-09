@@ -17,7 +17,8 @@ const TYPES := {
 	"VelocityMovement2D": "2D",
 	"InputBuffer": "GENERAL",
 	"FiniteStateMachine": "GENERAL",
-	"Juicer": "UI"
+	"Juicer": "UI",
+	"Interactor2D": "2D"
 }
 
 const SKIP := [
@@ -28,7 +29,8 @@ const SKIP := [
 	"juicer_scale_effect.gd",
 	"juicer_modulate_effect.gd",
 	"juicer_bounce_effect.gd",
-	"popup_bubble.gd"
+	"popup_bubble.gd",
+	"interactable_2d.gd"
 ]
 
 

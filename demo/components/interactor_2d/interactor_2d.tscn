@@ -118,6 +118,24 @@ region_rect = Rect2(704, 448, 64, 64)
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_hyg70")
 
+[node name="Lever2" type="Area2D" parent="." unique_id=1259457972]
+unique_name_in_owner = true
+position = Vector2(832, 512)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_rxq65")
+metadata/_custom_type_script = "uid://bk2bkccnfya4a"
+
+[node name="Sprite2D" type="Sprite2D" parent="Lever2" unique_id=774272053]
+texture = ExtResource("5_2m2fy")
+offset = Vector2(0, -32)
+region_enabled = true
+region_rect = Rect2(704, 448, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever2" unique_id=456413064]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_hyg70")
+
 [node name="Key" type="Area2D" parent="." unique_id=1257755037]
 unique_name_in_owner = true
 position = Vector2(896, 512)
