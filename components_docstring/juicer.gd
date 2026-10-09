@@ -13,7 +13,7 @@ signal group_tween_finished(group_name: StringName)
 ## Defaults automatically to the parent node if left unassigned.
 @export var target: CanvasItem
 
-## The list of executable [JuicerEffectGroup] animation presets assigned to this component.
+## An [Array] of executable [JuicerEffectGroup] animation presets assigned to this component.
 @export var effect_groups: Array[JuicerEffectGroup] = []
 
 var _active_tween: Tween

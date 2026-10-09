@@ -5,7 +5,7 @@ extends Control
 ##
 ## Tracks a [Node2D] target in world space and projects its position 
 ## onto the UI canvas. Delegates all entrance, exit, and idle animations 
-## to an attached [Juicer2D].
+## to an attached [Juicer].
 
 @export_group("Targeting")
 ## The [Node2D] target to track in world space.
@@ -31,8 +31,8 @@ extends Control
 ## Container node used for position centering and sizing calculations.
 @export var content_container: Control
 
-## The [Juicer2D] handling visual transitions for this bubble.
-@export var juicer_2d: Juicer2D
+## The [Juicer] handling visual transitions for this bubble.
+@export var juicer: Juicer
 
 @export_group("Juice Group Identifiers")
 ## [StringName] ID of the entrance animation configured inside the [Juicer2D].
@@ -80,12 +80,12 @@ func popup(text: String, icon: Texture2D = null) -> void:
 	
 	_update_position()
 	
-	if juicer_2d:
-		juicer_2d.play(pop_in_group)
+	if juicer:
+		juicer.play(pop_in_group)
 		
 		# If a looping idle/bounce effect group is assigned, queue/play it
 		if not idle_group.is_empty():
-			juicer_2d.play(idle_group, true)
+			juicer.play(idle_group, true)
 
 
 ## Triggers the exit juice group and hides the component upon completion.
@@ -96,8 +96,8 @@ func dismiss() -> void:
 	_is_active = false
 	set_process(false)
 	
-	if juicer_2d:
-		juicer_2d.play(pop_out_group)
+	if juicer:
+		juicer.play(pop_out_group)
 		
 		# Allow the exit animation time to play before setting visible = false
 		var tree := get_tree()

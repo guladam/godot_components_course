@@ -1,0 +1,272 @@
+[gd_scene format=4 uid="uid://fysd1v6b4xgm"]
+
+[ext_resource type="Script" uid="uid://c5s23baidr0lo" path="res://demo/components/interactor_2d/interactor_2d.gd" id="1_lnvyc"]
+[ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="2_jvccm"]
+[ext_resource type="TileSet" uid="uid://0ufumvwvaxs5" path="res://assets/tilesets/kenney_platformer_tiles.tres" id="3_xhu63"]
+[ext_resource type="Script" uid="uid://bk2bkccnfya4a" path="res://components/interactable_2d.gd" id="4_rxq65"]
+[ext_resource type="Texture2D" uid="uid://j2sbckg10pr0" path="res://assets/kenney_new_platformer_pack/spritesheet_tiles_default.png" id="5_2m2fy"]
+[ext_resource type="Script" uid="uid://bg0toje3cok7" path="res://demo/components/interactor_2d/character.gd" id="6_oci42"]
+[ext_resource type="Texture2D" uid="uid://du4wj4qqihe8l" path="res://assets/kenney_new_platformer_pack/spritesheet_characters_default.png" id="7_ya763"]
+[ext_resource type="Script" uid="uid://7cwia0gdrk56" path="res://components/interactor_2d.gd" id="8_4842o"]
+[ext_resource type="Texture2D" uid="uid://bde5pbwi62opo" path="res://assets/kenney_input_prompts_keyboard_mouse/keyboard_space.svg" id="9_ldk8q"]
+[ext_resource type="Texture2D" uid="uid://dkalkorte3hi8" path="res://assets/kenney_input_prompts_keyboard_mouse/keyboard_numpad_enter.svg" id="10_0foe1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyg70"]
+size = Vector2(64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olf0v"]
+atlas = ExtResource("7_ya763")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvepp"]
+atlas = ExtResource("7_ya763")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3vqm"]
+atlas = ExtResource("7_ya763")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pkgt"]
+atlas = ExtResource("7_ya763")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjqbe"]
+atlas = ExtResource("7_ya763")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vpjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olf0v")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvepp")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3vqm")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pkgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjqbe")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emk14"]
+size = Vector2(44, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyg70"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rswro"]
+radius = 30.0
+
+[node name="Interactor2D" type="Node2D" unique_id=897212505]
+script = ExtResource("1_lnvyc")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=171426956]
+modulate = Color(0.48235294, 0.48235294, 0.48235294, 1)
+tile_map_data = PackedByteArray("AAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAD//wEAAAACAAEAAAAAAAEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAADAAEAAAACAAEAAAAEAAEAAAACAAEAAAAFAAEAAAACAAEAAAD//wIAAAAAAAIAAAAAAAIAAAAAAAIAAAABAAIAAAAAAAIAAAACAAIAAAAAAAIAAAADAAIAAAAAAAIAAAAEAAIAAAAAAAIAAAAFAAIAAAAAAAIAAAAGAAAAAAABAAIAAAAGAAIAAAAAAAIAAAAGAAEAAAACAAEAAAA=")
+tile_set = ExtResource("2_jvccm")
+
+[node name="Tiles" type="TileMapLayer" parent="." unique_id=1992780580]
+tile_map_data = PackedByteArray("AAAAAAgAAQAHAA8AAAABAAgAAQAHAA8AAAACAAgAAQAHAA8AAAADAAgAAQAHAA8AAAAEAAgAAQAHAA8AAAAFAAgAAQAHAA8AAAAGAAgAAQAHAA8AAAAHAAgAAQAHAA8AAAAMAAgAAQAHAA8AAAANAAgAAQAHAA8AAAAOAAgAAQAHAA8AAAAPAAgAAQAHAA8AAAAQAAgAAQAHAA8AAAARAAgAAQAHAA8AAAASAAgAAQAHAA8AAAATAAgAAQAHAA8AAAAUAAgAAQAIAAAAAAD//wgAAQAIAAAAAAAAAAkAAQAIAAAAAAABAAkAAQAIAAAAAAACAAkAAQAIAAAAAAADAAkAAQAIAAAAAAAEAAkAAQAIAAAAAAAFAAkAAQAIAAAAAAAGAAkAAQAIAAAAAAAHAAkAAQAIAAAAAAAMAAkAAQAIAAAAAAANAAkAAQAIAAAAAAAOAAkAAQAIAAAAAAAPAAkAAQAIAAAAAAAQAAkAAQAIAAAAAAARAAkAAQAIAAAAAAASAAkAAQAIAAAAAAATAAkAAQAIAAAAAAAUAAkAAQAIAAAAAAAUAAoAAQAIAAAAAAATAAoAAQAIAAAAAAASAAoAAQAIAAAAAAARAAoAAQAIAAAAAAAQAAoAAQAIAAAAAAAPAAoAAQAIAAAAAAAOAAoAAQAIAAAAAAAUAAsAAQAIAAAAAAATAAsAAQAIAAAAAAASAAsAAQAIAAAAAAARAAsAAQAIAAAAAAAQAAsAAQAIAAAAAAAPAAsAAQAIAAAAAAAOAAsAAQAIAAAAAAANAAsAAQAIAAAAAAAMAAsAAQAIAAAAAAALAAsAAQAIAAAAAAANAAoAAQAIAAAAAAAMAAoAAQAIAAAAAAALAAoAAQAIAAAAAAAKAAoAAQAIAAAAAAAJAAoAAQAIAAAAAAAIAAoAAQAIAAAAAAAHAAoAAQAIAAAAAAAGAAoAAQAIAAAAAAAKAAsAAQAIAAAAAAAJAAsAAQAIAAAAAAAIAAsAAQAIAAAAAAAHAAsAAQAIAAAAAAAGAAsAAQAIAAAAAAAFAAsAAQAIAAAAAAAEAAsAAQAIAAAAAAADAAsAAQAIAAAAAAAFAAoAAQAIAAAAAAAEAAoAAQAIAAAAAAADAAoAAQAIAAAAAAACAAoAAQAIAAAAAAABAAoAAQAIAAAAAAAAAAoAAQAIAAAAAAD//woAAQAIAAAAAAD//wkAAQAIAAAAAAD//wsAAQAIAAAAAAAAAAsAAQAIAAAAAAABAAsAAQAIAAAAAAACAAsAAQAIAAAAAAAVAAsAAQAIAAAAAAAVAAoAAQAIAAAAAAAVAAkAAQAIAAAAAAAVAAgAAQAIAAAAAAD+/wgAAQAIAAAAAAD+/wkAAQAIAAAAAAD+/woAAQAIAAAAAAD+/wsAAQAIAAAAAAAUAAcAAQAIAAAAAAAUAAYAAQAIAAAAAAAUAAUAAQAIAAAAAAAUAAQAAQAIAAAAAAAUAAMAAQAIAAAAAAD//wcAAQAIAAAAAAD//wYAAQAIAAAAAAD//wUAAQAIAAAAAAD//wQAAQAIAAAAAAD//wMAAQAIAAAAAAD+/wMAAQAIAAAAAAD+/wQAAQAIAAAAAAD+/wUAAQAIAAAAAAD+/wYAAQAIAAAAAAD+/wcAAQAIAAAAAAAVAAMAAQAIAAAAAAAVAAQAAQAIAAAAAAAVAAUAAQAIAAAAAAAVAAYAAQAIAAAAAAAVAAcAAQAIAAAAAAAIAAkAAQAKAAgAAAAJAAkAAQAKAAgAAAAKAAkAAQAKAAgAAAALAAkAAQAKAAgAAAA=")
+tile_set = ExtResource("3_xhu63")
+
+[node name="Bridge" type="TileMapLayer" parent="." unique_id=820634038]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAAAAgAAQAHAA8AAAABAAgAAQAHAA8AAAACAAgAAQAHAA8AAAADAAgAAQAHAA8AAAAEAAgAAQAHAA8AAAAFAAgAAQAHAA8AAAAGAAgAAQAHAA8AAAAHAAgAAQAHAA8AAAAMAAgAAQAHAA8AAAANAAgAAQAHAA8AAAAOAAgAAQAHAA8AAAAPAAgAAQAHAA8AAAAQAAgAAQAHAA8AAAARAAgAAQAHAA8AAAASAAgAAQAHAA8AAAATAAgAAQAHAA8AAAAUAAgAAQAIAAAAAAD//wgAAQAIAAAAAAAAAAkAAQAIAAAAAAABAAkAAQAIAAAAAAACAAkAAQAIAAAAAAADAAkAAQAIAAAAAAAEAAkAAQAIAAAAAAAFAAkAAQAIAAAAAAAGAAkAAQAIAAAAAAAHAAkAAQAIAAAAAAAMAAkAAQAIAAAAAAANAAkAAQAIAAAAAAAOAAkAAQAIAAAAAAAPAAkAAQAIAAAAAAAQAAkAAQAIAAAAAAARAAkAAQAIAAAAAAASAAkAAQAIAAAAAAATAAkAAQAIAAAAAAAUAAkAAQAIAAAAAAAUAAoAAQAIAAAAAAATAAoAAQAIAAAAAAASAAoAAQAIAAAAAAARAAoAAQAIAAAAAAAQAAoAAQAIAAAAAAAPAAoAAQAIAAAAAAAOAAoAAQAIAAAAAAAUAAsAAQAIAAAAAAATAAsAAQAIAAAAAAASAAsAAQAIAAAAAAARAAsAAQAIAAAAAAAQAAsAAQAIAAAAAAAPAAsAAQAIAAAAAAAOAAsAAQAIAAAAAAANAAsAAQAIAAAAAAAMAAsAAQAIAAAAAAALAAsAAQAIAAAAAAANAAoAAQAIAAAAAAAMAAoAAQAIAAAAAAALAAoAAQAIAAAAAAAKAAoAAQAIAAAAAAAJAAoAAQAIAAAAAAAIAAoAAQAIAAAAAAAHAAoAAQAIAAAAAAAGAAoAAQAIAAAAAAAKAAsAAQAIAAAAAAAJAAsAAQAIAAAAAAAIAAsAAQAIAAAAAAAHAAsAAQAIAAAAAAAGAAsAAQAIAAAAAAAFAAsAAQAIAAAAAAAEAAsAAQAIAAAAAAADAAsAAQAIAAAAAAAFAAoAAQAIAAAAAAAEAAoAAQAIAAAAAAADAAoAAQAIAAAAAAACAAoAAQAIAAAAAAABAAoAAQAIAAAAAAAAAAoAAQAIAAAAAAD//woAAQAIAAAAAAD//wkAAQAIAAAAAAD//wsAAQAIAAAAAAAAAAsAAQAIAAAAAAABAAsAAQAIAAAAAAACAAsAAQAIAAAAAAAVAAsAAQAIAAAAAAAVAAoAAQAIAAAAAAAVAAkAAQAIAAAAAAAVAAgAAQAIAAAAAAD+/wgAAQAIAAAAAAD+/wkAAQAIAAAAAAD+/woAAQAIAAAAAAD+/wsAAQAIAAAAAAAUAAcAAQAIAAAAAAAUAAYAAQAIAAAAAAAUAAUAAQAIAAAAAAAUAAQAAQAIAAAAAAAUAAMAAQAIAAAAAAD//wcAAQAIAAAAAAD//wYAAQAIAAAAAAD//wUAAQAIAAAAAAD//wQAAQAIAAAAAAD//wMAAQAIAAAAAAD+/wMAAQAIAAAAAAD+/wQAAQAIAAAAAAD+/wUAAQAIAAAAAAD+/wYAAQAIAAAAAAD+/wcAAQAIAAAAAAAVAAMAAQAIAAAAAAAVAAQAAQAIAAAAAAAVAAUAAQAIAAAAAAAVAAYAAQAIAAAAAAAVAAcAAQAIAAAAAAAIAAkAAQAKAAgAAAAJAAkAAQAKAAgAAAAKAAkAAQAKAAgAAAALAAkAAQAKAAgAAAAIAAgAAQABAAEAAAALAAgAAQABAAAAAAAJAAgAAQABAAIAAAAKAAgAAQABAAIAAAA=")
+enabled = false
+tile_set = ExtResource("3_xhu63")
+
+[node name="Lever" type="Area2D" parent="." unique_id=1982430949]
+unique_name_in_owner = true
+position = Vector2(384, 512)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_rxq65")
+metadata/_custom_type_script = "uid://bk2bkccnfya4a"
+
+[node name="Sprite2D" type="Sprite2D" parent="Lever" unique_id=903330587]
+texture = ExtResource("5_2m2fy")
+offset = Vector2(0, -32)
+region_enabled = true
+region_rect = Rect2(704, 448, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever" unique_id=1693511480]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_hyg70")
+
+[node name="Key" type="Area2D" parent="." unique_id=1257755037]
+unique_name_in_owner = true
+position = Vector2(896, 512)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_rxq65")
+metadata/_custom_type_script = "uid://bk2bkccnfya4a"
+
+[node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=924382650]
+texture = ExtResource("5_2m2fy")
+offset = Vector2(0, -32)
+region_enabled = true
+region_rect = Rect2(768, 768, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=1383189551]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_hyg70")
+
+[node name="Door" type="Area2D" parent="." unique_id=1049746506]
+unique_name_in_owner = true
+position = Vector2(1088, 512)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_rxq65")
+metadata/_custom_type_script = "uid://bk2bkccnfya4a"
+
+[node name="Close" type="Sprite2D" parent="Door" unique_id=1857622891]
+position = Vector2(0, -32)
+texture = ExtResource("5_2m2fy")
+offset = Vector2(0, -32)
+region_enabled = true
+region_rect = Rect2(960, 128, 64, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=687250369]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_hyg70")
+
+[node name="DoorOpen" type="Sprite2D" parent="." unique_id=506747824]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1088, 480)
+texture = ExtResource("5_2m2fy")
+offset = Vector2(0, -32)
+region_enabled = true
+region_rect = Rect2(960, 0, 64, 128)
+
+[node name="Character" type="CharacterBody2D" parent="." unique_id=1425629951]
+unique_name_in_owner = true
+position = Vector2(156, 448)
+collision_layer = 3
+script = ExtResource("6_oci42")
+left_action = &"p1_move_left"
+right_action = &"p1_move_right"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character" unique_id=1396760407]
+sprite_frames = SubResource("SpriteFrames_3vpjw")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5642542
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=1074555086]
+position = Vector2(0, 54)
+shape = SubResource("RectangleShape2D_emk14")
+
+[node name="Interactor2D" type="Area2D" parent="Character" unique_id=184300602 node_paths=PackedStringArray("owner_node")]
+position = Vector2(0, 32)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("8_4842o")
+interact_input_action = &"interact"
+owner_node = NodePath("..")
+metadata/_custom_type_script = "uid://7cwia0gdrk56"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Interactor2D" unique_id=1225234115]
+shape = SubResource("CircleShape2D_hyg70")
+debug_color = Color(0.23420304, 0.42746282, 0.24190953, 0.41960785)
+
+[node name="Character2" type="CharacterBody2D" parent="." unique_id=4234613]
+unique_name_in_owner = true
+position = Vector2(261, 448)
+collision_layer = 3
+script = ExtResource("6_oci42")
+left_action = &"p2_move_left"
+right_action = &"p2_move_right"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character2" unique_id=1465873160]
+modulate = Color(1, 0.56078434, 0, 1)
+sprite_frames = SubResource("SpriteFrames_3vpjw")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5642542
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character2" unique_id=871891898]
+position = Vector2(0, 54)
+shape = SubResource("RectangleShape2D_emk14")
+
+[node name="Interactor2D" type="Area2D" parent="Character2" unique_id=896989585]
+position = Vector2(0, 32)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("8_4842o")
+metadata/_custom_type_script = "uid://7cwia0gdrk56"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character2/Interactor2D" unique_id=822980862]
+shape = SubResource("CircleShape2D_rswro")
+debug_color = Color(0, 0.6508944, 0.082470395, 0.41960785)
+
+[node name="InputIcon" type="Sprite2D" parent="." unique_id=1685540478]
+unique_name_in_owner = true
+visible = false
+position = Vector2(384, 432)
+texture = ExtResource("9_ldk8q")
+
+[node name="InputIcon2" type="Sprite2D" parent="." unique_id=1416275516]
+unique_name_in_owner = true
+visible = false
+position = Vector2(384, 432)
+texture = ExtResource("10_0foe1")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=208685836]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=35029212]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -276.0
+offset_right = 20.0
+offset_bottom = -236.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Status" type="Button" parent="UI/HBoxContainer" unique_id=1659345064]
+custom_minimum_size = Vector2(210, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+text = "Use A and D and  the
+arrow keys to move"
+
+[node name="Status2" type="Button" parent="UI/HBoxContainer" unique_id=587864693]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+disabled = true
+text = "Press Space 
+to Interact"
