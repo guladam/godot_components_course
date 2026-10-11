@@ -54,7 +54,7 @@ func get_best_interactable() -> Interactable2D:
 	var best_target: Interactable2D = null
 	var shortest_dist_sq: float = INF
 
-	for interactable in _nearby_interactables:
+	for interactable: Interactable2D in _nearby_interactables:
 		if not interactable.monitorable:
 			continue
 
