@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://e63yeryj4ukr"]
 
-[ext_resource type="Script" uid="uid://didym2w8fy1th" path="res://components/scene_spawner.gd" id="1_0ij5q"]
+[ext_resource type="Script" uid="uid://didym2w8fy1th" path="res://components/scene_spawner/scene_spawner.gd" id="1_0ij5q"]
 [ext_resource type="Script" uid="uid://cnqgvdbuictlu" path="res://demo/components/scene_spawner/scene_spawner.gd" id="1_gryga"]
 [ext_resource type="Shader" uid="uid://b6ygn1j2aujwh" path="res://assets/shaders/ocean_background.gdshader" id="1_y1vtt"]
 [ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="2_c8nvl"]

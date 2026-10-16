@@ -21,17 +21,7 @@ const TYPES := {
 	"Interactor2D": "2D"
 }
 
-const SKIP := [
-	"hurtbox_2d.gd",
-	"state.gd",
-	"juicer_effect.gd",
-	"juicer_effect_group.gd",
-	"juicer_scale_effect.gd",
-	"juicer_modulate_effect.gd",
-	"juicer_bounce_effect.gd",
-	"popup_bubble.gd",
-	"interactable_2d.gd"
-]
+const SKIP := []
 
 
 func _run() -> void:
@@ -40,12 +30,11 @@ func _run() -> void:
 	var component_types: Array[ComponentList.ComponentCategories] = []
 	var component_list := ComponentList.new()
 	
-	for file: String in DirAccess.get_files_at(COMPONENTS_SCRIPTS_FOLDER):
-		if file.ends_with(".gd") and file not in SKIP:
-			var name := file.to_pascal_case().trim_suffix(".gd").replace("2d", "2D")
+	for dir: String in DirAccess.get_directories_at(COMPONENTS_SCRIPTS_FOLDER):
+		if dir not in SKIP:
+			var name := dir.to_pascal_case().replace("2d", "2D")
 			component_paths.append(
-				COMPONENTS_DEMO_FOLDER + file.trim_suffix(".gd") + "/"
-				+ file.trim_suffix(".gd") + ".tscn"
+				COMPONENTS_DEMO_FOLDER + dir + "/" + dir + ".tscn"
 			)
 			component_names.append(name)
 			if name in TYPES:

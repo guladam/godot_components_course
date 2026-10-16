@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bi2jmbljgbqjs"]
 
 [ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="1_cln85"]
-[ext_resource type="Script" uid="uid://c4ohiw3dpmk8r" path="res://components/velocity_movement_2d.gd" id="2_cln85"]
+[ext_resource type="Script" uid="uid://c4ohiw3dpmk8r" path="res://components/velocity_movement_2d/velocity_movement_2d.gd" id="2_cln85"]
 
 [node name="VelocityMovement2DArrow" type="Node2D" unique_id=980845690]
 

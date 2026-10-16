@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="2_28gpe"]
 [ext_resource type="TileSet" uid="uid://0ufumvwvaxs5" path="res://assets/tilesets/kenney_platformer_tiles.tres" id="3_qjqbe"]
-[ext_resource type="Script" uid="uid://disn4qxyq3ejk" path="res://components/finite_state_machine.gd" id="4_0brsf"]
+[ext_resource type="Script" uid="uid://disn4qxyq3ejk" path="res://components/finite_state_machine/finite_state_machine.gd" id="4_0brsf"]
 [ext_resource type="Texture2D" uid="uid://bsukc2ifqhow6" path="res://assets/kenney_new_platformer_pack/spritesheet_enemies_default.png" id="4_6pkgt"]
 [ext_resource type="Script" uid="uid://cneaialibys6r" path="res://demo/components/finite_state_machine/enemy.gd" id="4_28gpe"]
 [ext_resource type="Texture2D" uid="uid://du4wj4qqihe8l" path="res://assets/kenney_new_platformer_pack/spritesheet_characters_default.png" id="4_d63d6"]

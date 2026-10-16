@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7kgucvb8rkd7"
-path="res://.godot/imported/input_buffer.svg-19eaf5a3caa4b4efd409863a72dc3643.ctex"
+uid="uid://bnw06u8yxhdui"
+path="res://.godot/imported/hitbox_2d.svg-ce040ac98b1cf2ece6361bb5e7c98429.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://components/input_buffer.svg"
-dest_files=["res://.godot/imported/input_buffer.svg-19eaf5a3caa4b4efd409863a72dc3643.ctex"]
+source_file="res://components/hitbox_2d/hitbox_2d.svg"
+dest_files=["res://.godot/imported/hitbox_2d.svg-ce040ac98b1cf2ece6361bb5e7c98429.ctex"]
 
 [params]
 

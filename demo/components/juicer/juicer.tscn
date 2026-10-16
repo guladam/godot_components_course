@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="1_nh6ky"]
 [ext_resource type="Script" uid="uid://1x7rrx35sylj" path="res://demo/components/juicer/juicer.gd" id="1_s6bkc"]
-[ext_resource type="Script" uid="uid://bo83g4v35paof" path="res://components/juicer.gd" id="2_0rdu8"]
-[ext_resource type="Script" uid="uid://c8sad24jusmy0" path="res://components/juicer_effect_group.gd" id="3_s6bkc"]
-[ext_resource type="Script" uid="uid://bob3vbe7swlsl" path="res://components/juicer_effect.gd" id="4_fsb7w"]
-[ext_resource type="Script" uid="uid://bivg56fu72v5" path="res://components/juicer_scale_effect.gd" id="5_mlyra"]
-[ext_resource type="Script" uid="uid://d2mb4s7eef6hc" path="res://components/juicer_bounce_effect.gd" id="7_fsb7w"]
-[ext_resource type="Script" uid="uid://beuvet8oaxgyw" path="res://components/juicer_modulate_effect.gd" id="8_mlyra"]
+[ext_resource type="Script" uid="uid://bo83g4v35paof" path="res://components/juicer/juicer.gd" id="2_0rdu8"]
+[ext_resource type="Script" uid="uid://c8sad24jusmy0" path="res://components/juicer/juicer_effect_group.gd" id="3_s6bkc"]
+[ext_resource type="Script" uid="uid://bob3vbe7swlsl" path="res://components/juicer/juicer_effect.gd" id="4_fsb7w"]
+[ext_resource type="Script" uid="uid://bivg56fu72v5" path="res://components/juicer/juicer_scale_effect.gd" id="5_mlyra"]
+[ext_resource type="Script" uid="uid://d2mb4s7eef6hc" path="res://components/juicer/juicer_bounce_effect.gd" id="7_fsb7w"]
+[ext_resource type="Script" uid="uid://beuvet8oaxgyw" path="res://components/juicer/juicer_modulate_effect.gd" id="8_mlyra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_acn12"]
 texture = ExtResource("1_nh6ky")

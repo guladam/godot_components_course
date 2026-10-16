@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4emdqrmyt15a" path="res://assets/kenney_scribble_platformer/spritesheet_default.png" id="1_3ji5u"]
 [ext_resource type="Script" uid="uid://cv70t06ht66b0" path="res://demo/components/hitbox_2d/hitbox_2d.gd" id="1_ekwxn"]
 [ext_resource type="Shader" uid="uid://b6ygn1j2aujwh" path="res://assets/shaders/ocean_background.gdshader" id="1_o215e"]
-[ext_resource type="Script" uid="uid://dyymmgkcx67da" path="res://components/hurtbox_2d.gd" id="2_ldjk5"]
+[ext_resource type="Script" uid="uid://dyymmgkcx67da" path="res://components/hitbox_2d/hurtbox_2d.gd" id="2_ldjk5"]
 [ext_resource type="PackedScene" uid="uid://cwe4sdcfrw34" path="res://demo/components/hitbox_2d/spear_hitbox_2d.tscn" id="2_weevq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ekwxn"]

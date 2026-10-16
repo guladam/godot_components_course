@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="JuicerEffectGroup" format=3 uid="uid://maai8kd5rnav"]
 
-[ext_resource type="Script" uid="uid://bob3vbe7swlsl" path="res://components/juicer_effect.gd" id="1_eflas"]
-[ext_resource type="Script" uid="uid://bivg56fu72v5" path="res://components/juicer_scale_effect.gd" id="2_ik5kh"]
-[ext_resource type="Script" uid="uid://c8sad24jusmy0" path="res://components/juicer_effect_group.gd" id="3_vvtb4"]
+[ext_resource type="Script" uid="uid://bob3vbe7swlsl" path="res://components/juicer/juicer_effect.gd" id="1_eflas"]
+[ext_resource type="Script" uid="uid://bivg56fu72v5" path="res://components/juicer/juicer_scale_effect.gd" id="2_ik5kh"]
+[ext_resource type="Script" uid="uid://c8sad24jusmy0" path="res://components/juicer/juicer_effect_group.gd" id="3_vvtb4"]
 
 [sub_resource type="Resource" id="Resource_rswro"]
 script = ExtResource("2_ik5kh")

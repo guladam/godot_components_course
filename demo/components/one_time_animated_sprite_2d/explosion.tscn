@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bohivismdom1a"]
 
 [ext_resource type="Texture2D" uid="uid://cp4rhkx1ekqby" path="res://assets/retro_pixel_effects/pixel_effect_21.png" id="1_hdpe2"]
-[ext_resource type="Script" uid="uid://c0b3gu87uu7vh" path="res://components/one_time_animated_sprite_2d.gd" id="2_yuc5f"]
+[ext_resource type="Script" uid="uid://c0b3gu87uu7vh" path="res://components/one_time_animated_sprite_2d/one_time_animated_sprite_2d.gd" id="2_yuc5f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdit0"]
 atlas = ExtResource("1_hdpe2")

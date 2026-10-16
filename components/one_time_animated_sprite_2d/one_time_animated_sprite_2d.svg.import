@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwcre7l1s7j7v"
-path="res://.godot/imported/interactable_2d.svg-6dd905e379c5e04763ccaa94840482d4.ctex"
+uid="uid://b0xa1d2vh5py5"
+path="res://.godot/imported/one_time_animated_sprite_2d.svg-82b7c468e5f83372d4a0862b12819514.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://components/interactable_2d.svg"
-dest_files=["res://.godot/imported/interactable_2d.svg-6dd905e379c5e04763ccaa94840482d4.ctex"]
+source_file="res://components/one_time_animated_sprite_2d/one_time_animated_sprite_2d.svg"
+dest_files=["res://.godot/imported/one_time_animated_sprite_2d.svg-82b7c468e5f83372d4a0862b12819514.ctex"]
 
 [params]
 

@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="2_my1nr"]
 [ext_resource type="TileSet" uid="uid://0ufumvwvaxs5" path="res://assets/tilesets/kenney_platformer_tiles.tres" id="3_ega7q"]
 [ext_resource type="Texture2D" uid="uid://du4wj4qqihe8l" path="res://assets/kenney_new_platformer_pack/spritesheet_characters_default.png" id="4_gl1i4"]
-[ext_resource type="Script" uid="uid://m2q8x6np8c4p" path="res://components/input_buffer.gd" id="5_xgnim"]
+[ext_resource type="Script" uid="uid://m2q8x6np8c4p" path="res://components/input_buffer/input_buffer.gd" id="5_xgnim"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olf0v"]
 atlas = ExtResource("4_gl1i4")

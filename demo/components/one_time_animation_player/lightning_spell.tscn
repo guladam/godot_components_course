@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3f1favl1f78n"]
 
 [ext_resource type="Texture2D" uid="uid://c8tyh226tvwiy" path="res://assets/retro_pixel_effects/pixel_effect_06.png" id="1_1pgib"]
-[ext_resource type="Script" uid="uid://cttdcphlr3rcu" path="res://components/one_time_animation_player.gd" id="2_602ed"]
+[ext_resource type="Script" uid="uid://cttdcphlr3rcu" path="res://components/one_time_animation_player/one_time_animation_player.gd" id="2_602ed"]
 
 [sub_resource type="Animation" id="Animation_07x4i"]
 length = 0.001

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s3wul6vas2b5"
-path="res://.godot/imported/popup_bubble.svg-5b120987ef002788b987af63ba75e411.ctex"
+uid="uid://bwcre7l1s7j7v"
+path="res://.godot/imported/interactable_2d.svg-0e085f8e6e2ac3fb8dc778c02d8ee502.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://components/popup_bubble.svg"
-dest_files=["res://.godot/imported/popup_bubble.svg-5b120987ef002788b987af63ba75e411.ctex"]
+source_file="res://components/interactor_2d/interactable_2d.svg"
+dest_files=["res://.godot/imported/interactable_2d.svg-0e085f8e6e2ac3fb8dc778c02d8ee502.ctex"]
 
 [params]
 

@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://c5s23baidr0lo" path="res://demo/components/interactor_2d/interactor_2d.gd" id="1_lnvyc"]
 [ext_resource type="TileSet" uid="uid://bs1uukpbl8d2d" path="res://assets/tilesets/kenney_platformer_bg.tres" id="2_jvccm"]
 [ext_resource type="TileSet" uid="uid://0ufumvwvaxs5" path="res://assets/tilesets/kenney_platformer_tiles.tres" id="3_xhu63"]
-[ext_resource type="Script" uid="uid://bk2bkccnfya4a" path="res://components/interactable_2d.gd" id="4_rxq65"]
+[ext_resource type="Script" uid="uid://bk2bkccnfya4a" path="res://components/interactor_2d/interactable_2d.gd" id="4_rxq65"]
 [ext_resource type="Texture2D" uid="uid://j2sbckg10pr0" path="res://assets/kenney_new_platformer_pack/spritesheet_tiles_default.png" id="5_2m2fy"]
 [ext_resource type="Script" uid="uid://bg0toje3cok7" path="res://demo/components/interactor_2d/character.gd" id="6_oci42"]
 [ext_resource type="Texture2D" uid="uid://du4wj4qqihe8l" path="res://assets/kenney_new_platformer_pack/spritesheet_characters_default.png" id="7_ya763"]
-[ext_resource type="Script" uid="uid://7cwia0gdrk56" path="res://components/interactor_2d.gd" id="8_4842o"]
+[ext_resource type="Script" uid="uid://7cwia0gdrk56" path="res://components/interactor_2d/interactor_2d.gd" id="8_4842o"]
 [ext_resource type="Texture2D" uid="uid://bde5pbwi62opo" path="res://assets/kenney_input_prompts_keyboard_mouse/keyboard_space.svg" id="9_ldk8q"]
 [ext_resource type="Texture2D" uid="uid://dkalkorte3hi8" path="res://assets/kenney_input_prompts_keyboard_mouse/keyboard_numpad_enter.svg" id="10_0foe1"]
 
