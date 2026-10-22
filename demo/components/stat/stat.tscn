@@ -1,0 +1,319 @@
+[gd_scene format=3 uid="uid://b4g758634edjc"]
+
+[ext_resource type="Shader" uid="uid://b6ygn1j2aujwh" path="res://assets/shaders/ocean_background.gdshader" id="1_mj6t1"]
+[ext_resource type="Script" uid="uid://dxphrew4evku0" path="res://demo/components/stat/stat.gd" id="1_tklit"]
+[ext_resource type="Script" uid="uid://bxp7y7cg8e60j" path="res://components/stat/stat_container.gd" id="2_xcjvd"]
+[ext_resource type="Resource" uid="uid://ciewcob0cvkmh" path="res://demo/components/stat/stat_sheets/slime.tres" id="3_7cxyl"]
+[ext_resource type="Script" uid="uid://bccshusicknrw" path="res://components/stat/stat_pool.gd" id="4_7cxyl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tklit"]
+shader = ExtResource("1_mj6t1")
+shader_parameter/bottom_color = Color(0.8862745, 0.91764706, 0.9882353, 1)
+shader_parameter/top_color = Color(0.34509805, 0.4509804, 0.78039217, 1)
+shader_parameter/wave_amp = 0.038000001805
+shader_parameter/wave_size = 3.0230000960925
+shader_parameter/wave_time_mul = 0.11000000196512
+shader_parameter/total_phases = 6
+
+[node name="Stat" type="CanvasLayer" unique_id=2132352737]
+script = ExtResource("1_tklit")
+
+[node name="Enemy" type="Node" parent="." unique_id=211838023]
+unique_name_in_owner = true
+
+[node name="StatContainer" type="Node" parent="Enemy" unique_id=611156442]
+unique_name_in_owner = true
+script = ExtResource("2_xcjvd")
+sheet = ExtResource("3_7cxyl")
+metadata/_custom_type_script = "uid://bxp7y7cg8e60j"
+
+[node name="Health" type="Node" parent="Enemy" unique_id=347748734 node_paths=PackedStringArray("stats")]
+unique_name_in_owner = true
+script = ExtResource("4_7cxyl")
+stats = NodePath("../StatContainer")
+max_stat_id = &"hp"
+metadata/_custom_type_script = "uid://bccshusicknrw"
+
+[node name="Mana" type="Node" parent="Enemy" unique_id=1076861424 node_paths=PackedStringArray("stats")]
+unique_name_in_owner = true
+script = ExtResource("4_7cxyl")
+stats = NodePath("../StatContainer")
+max_stat_id = &"mp"
+metadata/_custom_type_script = "uid://bccshusicknrw"
+
+[node name="Xp" type="Node" parent="Enemy" unique_id=1606241633 node_paths=PackedStringArray("stats")]
+unique_name_in_owner = true
+script = ExtResource("4_7cxyl")
+stats = NodePath("../StatContainer")
+start_full = false
+metadata/_custom_type_script = "uid://bccshusicknrw"
+
+[node name="Background" type="ColorRect" parent="." unique_id=277657413]
+material = SubResource("ShaderMaterial_tklit")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=333904611]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -20.0
+offset_right = 21.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2136165146]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Stats" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1405552454]
+layout_mode = 2
+
+[node name="StatRow" type="HBoxContainer" parent="PanelContainer/MarginContainer/Stats" unique_id=1253422064]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow" unique_id=617334252]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "HP (%): "
+horizontal_alignment = 2
+
+[node name="HealthProgress" type="ProgressBar" parent="PanelContainer/MarginContainer/Stats/StatRow" unique_id=1697073938]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.0
+
+[node name="StatRow2" type="HBoxContainer" parent="PanelContainer/MarginContainer/Stats" unique_id=324580983]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow2" unique_id=339412117]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "HP: "
+horizontal_alignment = 2
+
+[node name="HealthProgress2" type="ProgressBar" parent="PanelContainer/MarginContainer/Stats/StatRow2" unique_id=1412992897]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+max_value = 1.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow2/HealthProgress2" unique_id=583009070]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatRow3" type="HBoxContainer" parent="PanelContainer/MarginContainer/Stats" unique_id=1445157817]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow3" unique_id=1470046292]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "MP:"
+horizontal_alignment = 2
+
+[node name="ManaProgress" type="ProgressBar" parent="PanelContainer/MarginContainer/Stats/StatRow3" unique_id=1675091524]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+max_value = 1.0
+show_percentage = false
+
+[node name="ManaLabel" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow3/ManaProgress" unique_id=2019762393]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatRow4" type="HBoxContainer" parent="PanelContainer/MarginContainer/Stats" unique_id=911152387]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow4" unique_id=1925409527]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "XP:"
+horizontal_alignment = 2
+
+[node name="XPProgress" type="ProgressBar" parent="PanelContainer/MarginContainer/Stats/StatRow4" unique_id=2039609539]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 26)
+layout_mode = 2
+max_value = 1.0
+show_percentage = false
+
+[node name="XPLabel" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow4/XPProgress" unique_id=1647830239]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 / 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatRow5" type="HBoxContainer" parent="PanelContainer/MarginContainer/Stats" unique_id=1249677718]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow5" unique_id=247307766]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "STR:"
+horizontal_alignment = 2
+
+[node name="StrengthLabel" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow5" unique_id=310191789]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "10"
+horizontal_alignment = 1
+
+[node name="StatRow6" type="HBoxContainer" parent="PanelContainer/MarginContainer/Stats" unique_id=866079489]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow6" unique_id=728793797]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "AGI:"
+horizontal_alignment = 2
+
+[node name="AgilityLabel" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow6" unique_id=1892439236]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "10"
+horizontal_alignment = 1
+
+[node name="StatRow7" type="HBoxContainer" parent="PanelContainer/MarginContainer/Stats" unique_id=990830523]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow7" unique_id=675722927]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "INT:"
+horizontal_alignment = 2
+
+[node name="IntelligenceLabel" type="Label" parent="PanelContainer/MarginContainer/Stats/StatRow7" unique_id=127307643]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "10"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HFlowContainer" parent="." unique_id=1007932455]
+custom_minimum_size = Vector2(640, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = 148.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="DmgButton" type="Button" parent="Buttons" unique_id=1530380161]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Take 4 DMG"
+
+[node name="HealButton" type="Button" parent="Buttons" unique_id=688276593]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Heal 5"
+
+[node name="ManaButton" type="Button" parent="Buttons" unique_id=134157263]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+focus_mode = 0
+text = " Spell (10 MP)"
+
+[node name="RefillManaButton" type="Button" parent="Buttons" unique_id=880142250]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Refill Mana"
+
+[node name="XPButton" type="Button" parent="Buttons" unique_id=1160186407]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+focus_mode = 0
+text = "+25 XP"
+
+[node name="StrButton" type="Button" parent="Buttons" unique_id=1168607608]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+focus_mode = 0
+text = "+1 STR potion"
+
+[node name="PotionButton" type="Button" parent="Buttons" unique_id=1380733722]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Berzerk Potion (5s)"
+
+[node name="BeltButton" type="Button" parent="Buttons" unique_id=969992592]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Belt of Wisdow item"
+
+[node name="Loaded" type="Button" parent="." unique_id=1916824393]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -167.0
+offset_right = 75.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "Loaded: *.tres"

@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="StatSheet" format=3 uid="uid://cxrsdx3iyktu"]
+
+[ext_resource type="Script" uid="uid://55y17olpt7x6" path="res://components/stat/stat_sheet.gd" id="1_bk8wb"]
+[ext_resource type="Script" uid="uid://6272l3y6y1gm" path="res://components/stat/stat_definition.gd" id="2_rioeu"]
+
+[sub_resource type="Resource" id="Resource_kmwn5"]
+script = ExtResource("2_rioeu")
+name = &"hp"
+base_value = 75.0
+has_min_limit = true
+min_limit = 1.0
+
+[sub_resource type="Resource" id="Resource_vgkde"]
+script = ExtResource("2_rioeu")
+name = &"mp"
+base_value = 50.0
+
+[sub_resource type="Resource" id="Resource_duv1u"]
+script = ExtResource("2_rioeu")
+name = &"xp"
+base_value = 0.0
+
+[sub_resource type="Resource" id="Resource_1gnoc"]
+script = ExtResource("2_rioeu")
+name = &"str"
+base_value = 1.0
+has_max_limit = true
+max_limit = 99.0
+
+[sub_resource type="Resource" id="Resource_fmgb1"]
+script = ExtResource("2_rioeu")
+name = &"agi"
+base_value = 5.0
+
+[sub_resource type="Resource" id="Resource_uwplb"]
+script = ExtResource("2_rioeu")
+name = &"int"
+base_value = 40.0
+
+[resource]
+script = ExtResource("1_bk8wb")
+stat_definitions = Array[ExtResource("2_rioeu")]([SubResource("Resource_kmwn5"), SubResource("Resource_vgkde"), SubResource("Resource_duv1u"), SubResource("Resource_1gnoc"), SubResource("Resource_fmgb1"), SubResource("Resource_uwplb")])

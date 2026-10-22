@@ -18,7 +18,8 @@ const TYPES := {
 	"InputBuffer": "GENERAL",
 	"FiniteStateMachine": "GENERAL",
 	"Juicer": "UI",
-	"Interactor2D": "2D"
+	"Interactor2D": "2D",
+	"Stat": "GENERAL"
 }
 
 const SKIP := []

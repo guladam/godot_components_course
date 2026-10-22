@@ -1,0 +1,4 @@
+name,hp,hp_min,mp,xp,str,str_max,agi,int
+goblin,50,1,0,0,10,99,10,10
+slime,20,1,0,0,5,99,10,20
+wizard,75,1,50,0,1,99,5,40
