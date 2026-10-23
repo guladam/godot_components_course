@@ -62,8 +62,8 @@ func _ready() -> void:
 	)
 	potion_button.pressed.connect(_on_berzerk_potion_pressed)
 	belt_button.pressed.connect(func():
-		var belt_int_mod := StatModifier.flat(&"belt_of_wisdom", 25)
-		var belt_str_mod := StatModifier.flat(&"belt_of_wisdom", -999)
+		var belt_int_mod := StatModifier.flat(&"belt_of_wisdom", 25, false)
+		var belt_str_mod := StatModifier.flat(&"belt_of_wisdom", -999, false)
 		stat_container.get_stat(&"int").add_modifier(belt_int_mod)
 		stat_container.get_stat(&"str").add_modifier(belt_str_mod)
 	)

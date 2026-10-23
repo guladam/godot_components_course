@@ -18,6 +18,9 @@ func get_value() -> float:
 
 
 func add_modifier(modifier: StatModifier) -> void:
+	if not modifier.stackable:
+		remove_modifiers_from(modifier.source)
+	
 	_modifiers.append(modifier)
 	_refresh()
 
