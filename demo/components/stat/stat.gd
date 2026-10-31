@@ -2,6 +2,7 @@ extends CanvasLayer
 
 var level := 1
 var xp_per_level := 50
+var character: String
 
 @onready var stat_container: StatContainer = %StatContainer
 @onready var health: StatPool = %Health
@@ -30,7 +31,8 @@ var xp_per_level := 50
 @onready var belt_button: Button = %BeltButton
 
 func _ready() -> void:
-	loaded.text = "Loaded: %s" % stat_container.sheet.resource_path.get_file()
+	character = stat_container.sheet.resource_path.get_file().trim_suffix(".tres").to_pascal_case()
+	loaded.text = "%s (lvl 1)" % character
 	
 	health.changed.connect(_on_health_changed)
 	mana.changed.connect(_on_mana_changed)
@@ -55,6 +57,8 @@ func _ready() -> void:
 		while xp.current >= xp_per_level * level:
 			level += 1
 			xp.change(-1 * xp_per_level * (level - 1))
+		
+		loaded.text = "%s (lvl %d)" % [character, level]
 	)
 	str_button.pressed.connect(func():
 		var potion_mod := StatModifier.flat(&"str_potion_2", 2)
