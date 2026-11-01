@@ -19,15 +19,19 @@ func get_value() -> float:
 
 func add_modifier(modifier: StatModifier) -> void:
 	if not modifier.stackable:
-		remove_modifiers_from(modifier.source)
+		_remove_from_source(modifier.source)
 	
 	_modifiers.append(modifier)
 	_refresh()
 
 
 func remove_modifiers_from(source: StringName) -> void:
-	_modifiers.assign(_modifiers.filter(func(m: StatModifier): return m.source != source))
+	_remove_from_source(source)
 	_refresh()
+
+
+func _remove_from_source(source: StringName) -> void:
+	_modifiers.assign(_modifiers.filter(func(m: StatModifier): return m.source != source))
 
 
 func _calculate() -> float:

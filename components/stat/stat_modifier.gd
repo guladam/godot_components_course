@@ -3,10 +3,10 @@ extends RefCounted
 
 enum Type {PERCENT_BASED, FLAT, OVERRIDE}
 
-@export var type: Type
-@export var source: StringName
-@export var value: float
-@export var stackable: bool = true
+var type: Type
+var source: StringName
+var value: float
+var stackable: bool = true
 
 
 static func percent(mod_source: StringName, amount: float, stacking: bool = true) -> StatModifier:

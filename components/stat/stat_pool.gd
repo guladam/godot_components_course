@@ -21,6 +21,7 @@ func _ready() -> void:
 		await stats.ready
 	
 	_max_stat = stats.get_stat(max_stat_id)
+	assert(_max_stat, "Unknown stat: %s" % max_stat_id)
 	_max_stat.changed.connect(_on_max_changed)
 	
 	if start_full:
