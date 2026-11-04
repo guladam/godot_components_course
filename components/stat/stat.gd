@@ -38,7 +38,7 @@ func _calculate() -> float:
 	var flat := 0.0
 	var percent := 1.0
 	
-	for modifier in _modifiers:
+	for modifier: StatModifier in _modifiers:
 		match modifier.type:
 			StatModifier.Type.FLAT:
 				flat += modifier.value

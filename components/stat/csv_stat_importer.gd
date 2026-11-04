@@ -32,7 +32,6 @@ func _run() -> void:
 	
 	while not file.eof_reached():
 		var row_values := file.get_csv_line()
-		print(row_values)
 		
 		if row_values.size() < headers.size() or row_values[0].strip_edges().is_empty():
 			continue

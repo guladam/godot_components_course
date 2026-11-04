@@ -80,8 +80,7 @@ func _on_berzerk_potion_pressed() -> void:
 	stat_container.get_stat(&"hp").add_modifier(berzerk_hp_mod)
 	stat_container.get_stat(&"mp").add_modifier(berzerk_mp_mod)
 	timer.timeout.connect(func():
-		stat_container.get_stat(&"hp").remove_modifiers_from(&"berzerk_potion")
-		stat_container.get_stat(&"mp").remove_modifiers_from(&"berzerk_potion")
+		stat_container.remove_modifier(&"berzerk_potion")
 	, CONNECT_ONE_SHOT)
 
 

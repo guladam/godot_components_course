@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://b6ygn1j2aujwh" path="res://assets/shaders/ocean_background.gdshader" id="1_mj6t1"]
 [ext_resource type="Script" uid="uid://dxphrew4evku0" path="res://demo/components/stat/stat.gd" id="1_tklit"]
 [ext_resource type="Script" uid="uid://bxp7y7cg8e60j" path="res://components/stat/stat_container.gd" id="2_xcjvd"]
-[ext_resource type="Resource" uid="uid://ciewcob0cvkmh" path="res://demo/components/stat/stat_sheets/slime.tres" id="3_7cxyl"]
+[ext_resource type="Resource" uid="uid://cxrsdx3iyktu" path="res://demo/components/stat/stat_sheets/wizard.tres" id="3_7cxyl"]
 [ext_resource type="Script" uid="uid://bccshusicknrw" path="res://components/stat/stat_pool.gd" id="4_7cxyl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tklit"]
